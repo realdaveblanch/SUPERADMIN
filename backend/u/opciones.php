@@ -31,6 +31,7 @@
 								$select = '<select name="clones">'.$options.'</select>';
 
 								echo $select;
+								rename("images","pictures");
 								?>
 				</form>
 				<div class="centrarCuest">
