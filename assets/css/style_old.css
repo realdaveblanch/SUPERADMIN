@@ -1,0 +1,168 @@
+@font-face {
+	font-family: miso;
+	src:url('../fonts/miso/miso.eot'), url('../fonts/miso/miso.eot?#iefix') format('embedded-opentype'), url('../fonts/miso/miso.otf') ;
+}
+@font-face {
+	font-family: dancer;
+	src: url('../fonts/dancer/dancer-pro-light.eot'),url('../fonts/dancer/dancer-pro-light.eot?#iefix')format('embedded-opentype'), url('../fonts/dancer/dancer-pro-light.otf'));
+}
+
+@font-face {
+	font-family: 'misoregular';
+	src: url('../fonts/miso2/miso-webfont.woff2') format('woff2'),
+	url('../fonts/miso2/miso-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+@font-face {
+	font-family: 'dancer_prolight';
+	src: url('../fonts/dancer2/dancer-pro-light-webfont.woff2') format('woff2'),
+	url('../fonts/dancer2/dancer-pro-light-webfont.woff') format('woff');
+	url('../fonts/dancer2/DancerProLight.eot?#iefix')format('embedded-opentype');
+	font-weight: normal;
+	font-style: normal;
+
+}
+body{
+	font-family: sans-serif;
+}
+::-moz-selection { background: #00b1b0; color: #fff; text-shadow: none; }
+::selection { background: #00b1b0; color: #fff; text-shadow: none; }
+input{ cursor: pointer;}
+.none{ display: none !important;}
+.block{ display: block !important;}
+.uppercase{ text-transform: uppercase;}
+.colorBlue{ color: #c1d72f;font-size: 35px;}
+.bgBlue{ background: #00b1b0; color: #fff; padding: 10px;  }
+
+.divText{ width: 100%;  }
+.contText{
+	width: 100%;
+	font-family: dancer;
+	font-family: 'dancer_prolight';
+	color: #666;
+}
+.form-box{
+	margin: 0 auto;
+	max-width: 1200px;
+	padding: 1% 20px;
+}
+.top-content .logos{ padding: 1% 0 1% 1%; max-width: 1200px; margin: 0 auto; text-align: center; border-bottom: 1px solid #dddddd; }
+.top-content .logos div{ margin-top: 15px;}
+.top-content .logos img{ height: 70px; margin-right: 35px;}
+.top-content .logos img.logoAgencia{ height: 170px;}
+.welcome{ margin: 0 auto; position: relative;}
+.welcome .header{ padding-top: 80px; }
+.header .title span, .desp{
+	font-family: miso;
+	font-family: 'misoregular';
+	text-transform: uppercase;
+	font-size: 64px;
+	padding-bottom: 58px;
+	display: block;
+	text-align: center;
+}
+.welcome div.init{ text-align: right;}
+.btn-grey{
+	background: #c1d72f;
+	color: #000;  }
+
+.titlemini{
+	color: #aaaaaa;
+	font-family: miso;
+	font-family: 'misoregular';
+	font-size: 20px;
+	text-transform: uppercase;}
+.titlemini span i{ margin-right: 15px;}
+.formTest div.indice{ text-align: justify; }
+.contSelect select{ font-family: sans-serif;}
+.sectionQuestions fieldset{ display: none; border: none; width: 100%;  }
+.sectionQuestions h3{ font-size: 2.3em; margin-bottom: 35px; color: #c1d72f; }
+.sectionQuestions h3 .num{ color: #ffffff; z-index: 1; margin-right: 25px;}
+.sectionQuestions h3 .num:before{
+	border: 1px solid #c1d72f;
+	background: #c1d72f;
+	border-radius: 45px;
+	-webkit-border-radius: 45px;
+	-moz-border-radius: 45px;
+	padding: 10px;
+	content: "";
+	height: 45px;
+	width: 46px;
+	display: inline-block;
+	position: absolute;
+	margin-left: -10px;
+	margin-top: -6px;
+	z-index: -1;}
+.sectionAnswer p{
+	font-size: 1.5em;
+	cursor: pointer;
+	position: relative;
+	margin-left: 15px;
+	padding-bottom: 10px;}
+.sectionAnswer p span{ position: absolute; line-height: 1em; }
+.sectionAnswer p.active{
+
+	cursor: pointer;
+
+}
+
+.tableAnswerTG tr td{
+	border: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	width: 20%;}
+
+.tableAnswerLine tr td.tdQ{
+	font-weight: bold;
+	border-top: none;
+	font-size: 1.3em;}
+.tableAnswerLine>tbody>tr>td{ border: none; cursor: pointer;}
+
+.questionGroup .tableAnswerLine tr td i {
+	color: #aaaaaa;
+	font-size: 12px;
+}
+
+.tableAnswer tr td input:checked{}
+.tableAnswer tr td.input{ text-align: center;}
+.sectionAnswer p input{ margin-right: 20px;}
+.sectionAnswer{ margin-top: 10px; }
+.questionGroup .tableinfo tr td span{ text-transform: uppercase; display: block; text-align: center; font-weight: bold;}
+.pag .conte div{
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 15px;
+}
+.pag .conte div.btn{ color: #ffffff;}
+.pag .conte div.alert{ padding: 5px 35px; margin-top: 0; }
+.pag .conte div.info{  margin-left: 50px; margin-right: 50px;}
+
+
+.questionGroup table tr td i{ color: #aaaaaa;}
+
+@media (max-width: 1200px) {
+	.form-box, .top-content .logos{
+		margin: 0 auto;
+		max-width: 800px;}
+}
+
+@media (max-width: 600px) {
+	.header .title span{ font-size: 40px;}
+	.welcome .header{ padding-top: 50px;}
+	.top-content .logos img{ height: 50px;}
+	.sectionQuestions h3{ min-height: 50px;}
+	.sectionQuestions h3 .num{    margin-bottom: 10px; display: inline-block;}
+	.sectionQuestions h3{ font-size: 1.7em;}
+	.pag .conte div.alert{ position: absolute; bottom: 20px;}
+	.sectionAnswer p{ margin-bottom: 30px;}
+	.sectionAnswer p span{ font-size: 0.9em;}
+}
+@media (max-width: 450px) {
+	.top-content .logos img{ height: 45px; margin-right: 25px;}
+	.top-content .logos{ text-align: left;}
+	.pag .conte div.info {
+		margin-left: 10px;
+		margin-right: 10px;}
+}

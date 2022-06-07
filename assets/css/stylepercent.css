@@ -1,0 +1,107 @@
+.estados {
+  position: relative;
+	top: 0px;
+	left: 0px;
+}
+.otherstats {
+  position: relative;
+  width: 214px;
+  margin-top: -20px;
+  text-align: center;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 20px;
+  box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.15);
+}
+.otherstatslistado {
+  position: relative;
+  width: 214px;
+  margin: -20px 156px 45px;
+  text-align: center;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 20px;
+  box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.panel {
+  position: relative;
+  width: 300px;
+  margin: 40px auto;
+  text-align: center;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+}
+.ultimo {
+    align-content: center;
+	text-align: center;
+}
+
+.chart {
+  display: inline-block;
+  width: 177px;
+  margin: 6px auto 20px;
+  padding: 0 -12px;
+}
+
+.easyPieChart {
+  position: relative;
+  text-align: center;
+  height: 71px;
+}
+.easyPieChart canvas {
+  position: absolute;
+  top: 3px;
+  left: 2px;
+  height: 107px;
+  width: 105px;
+}
+
+.percentage {
+  margin-bottom: 0.5em;
+  font-weight: 100;
+  color: black;
+}
+.label {
+  margin-bottom: 0.5em;
+  font-weight: 100;
+  color: black;
+  margin-left: -68px;
+}
+.labela {
+  margin-bottom: 0.5em;
+  font-weight: 100;
+  color: black;
+}
+
+sup {
+  top: -0.2em;
+  margin-left: 1px;
+}
+
+.ctrl {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  color: #c4cdcc;
+  word-spacing: 5px;
+}
+.ctrl spana {
+  cursor: pointer;
+  -moz-transition: color 0.5s ease-in-out;
+  -o-transition: color 0.5s ease-in-out;
+  -webkit-transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out;
+}
+.ctrl spana:hover {
+  color: #000;
+}
+
+.meta {
+  margin: auto;
+  max-width: 280px;
+  border-top: 1px solid rgba(155, 155, 155, 0.2);
+  text-align: center;
+}
