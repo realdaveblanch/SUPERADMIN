@@ -1,0 +1,41 @@
+[{
+  "id": "1",
+  "value":"1",
+  "nm": "Gestión"
+},{
+  "id": "2",
+  "value":"2",
+  "nm": "Inspección"
+}, {
+  "id": "3",
+  "value":"3",
+  "nm": "Recaudación"
+}, {
+  "id": "4",
+  "value":"4",
+  "nm": "Aduanas"
+},{
+  "id": "5",
+  "value":"5",
+  "nm": "Vigilancia Aduanera (Investigación)"
+}, {
+  "id": "6",
+  "value":"6",
+  "nm": "Vigilancia Aduanera (Marítimo)"
+}, {
+  "id": "7",
+  "value":"7",
+  "nm": "Recursos Humanos- Económico"
+}, {
+  "id": "8",
+  "value":"8",
+  "nm": "Informática"
+},{
+  "id": "9",
+  "value":"9",
+  "nm": "Servicio jurídico"
+}, {
+  "id": "10",
+  "value":"10",
+  "nm": "Resto de áreas"
+}]

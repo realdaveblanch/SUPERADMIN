@@ -1,0 +1,70 @@
+[{
+  "id": "1",
+  "value":"1",
+  "nm": "Funcionario A1: C.SUPERIOR INSPECTORES DE HACIENDA"
+},{
+  "id": "2",
+  "value":"2",
+  "nm": "Funcionario A1: OTROS CUERPOS Y ESCALAS"
+}, {
+  "id": "3",
+  "value":"3",
+  "nm": "Funcionario A2: CUERPO TÉCNICO DE HACIENDA"
+}, {
+  "id": "4",
+  "value":"4",
+  "nm": "Funcionario A2: OTROS CUERPOS Y ESCALAS"
+},{
+  "id": "5",
+  "value":"5",
+  "nm": "Funcionario C1: C.GRAL. ADM. AGENTE TRIBUTARIO"
+}, {
+  "id": "6",
+  "value":"6",
+  "nm": "Funcionario C1: C.GRAL. ADM. ADMÓN DEL ESTADO"
+}, {
+  "id": "7",
+  "value":"7",
+  "nm": "Funcionario C1: OTROS CUERPOS Y ESCALAS"
+}, {
+  "id": "8",
+  "value":"8",
+  "nm": "Funcionario C2/E: C. GRAL. AUXILIAR DE LA ADMÓN DEL ESTADO"
+},{
+  "id": "9",
+  "value":"9",
+  "nm": "Funcionario C2/E: OTROS CUERPOS Y ESCALAS"
+}, {
+  "id": "10",
+  "value":"10",
+  "nm": "Laboral: OFICIAL ADMINISTRATIVO"
+}, {
+  "id": "11",
+  "value":"11",
+  "nm": "Laboral: AGENTE TRIBUTARIO / EJECUTIVO / AYUDANTE"
+}, {
+  "id": "12",
+  "value":"12",
+  "nm": "Laboral: OFICIAL OFICIOS"
+}, {
+  "id": "13",
+  "value":"13",
+  "nm": "Laboral: AUXILIAR ADMINISTRACIÓN E INFORMACIÓN"
+}, {
+  "id": "14",
+  "value":"14",
+  "nm": "Laboral: TELEFONISTA"
+}, {
+  "id": "15",
+  "value":"15",
+  "nm": "Laboral: ORDENANZA O COORD. PERSONAL SUBALTERNO"
+}, {
+  "id": "16",
+  "value":"16",
+  "nm": "Laboral: FIJO DISCONTINUO"
+}
+, {
+  "id": "17",
+  "value":"17",
+  "nm": "Laboral: OTRAS CATEGORÍAS"
+}]
