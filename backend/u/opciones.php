@@ -35,10 +35,29 @@
 								
 								
 								?>
-								<button type="submit" name="seleccionar">Select</button>
+								<button type="submit" name="seleccionar">DESACTIVAR</button>
 								
 								
 				</form>
+				<form  class="form-box login" method="post" action="reactivar.php">
+					<?php
+							$clones = file('cfg/urlunactive.ini');
+								$options = '';
+								foreach ($clones as $clon) {
+									$options .= '<option value="'.$clon.'">'.$clon.'</option>';
+								}
+								$select = '<select name="clones">'.$options.'</select>';
+
+								echo $select;
+								
+								
+								
+								?>
+								<button type="submit" name="reactivar">reactivar</button>
+								
+								
+				</form>
+				
 				
 							
 								
