@@ -160,16 +160,7 @@
 								<label style="margin-top: 15px;">Nombre de la carpeta actual:</label>	
 								<p class="prueba"><?php echo file_get_contents('cfg/urlpura.ini'); ?></p>
 							</div>
-							<?php
-							$clones = file('cfg/clones.ini');
-								$options = '';
-								foreach ($clones as $clon) {
-									$options .= '<option value="'.$clon.'">'.$clon.'</option>';
-								}
-								$select = '<select name="clones">'.$options.'</select>';
-
-								echo $select;
-								?>
+							
 					
 							<div class="resultadosadmin" id="clonar">
 								<a href="backup.php" class="btn btn-grey btnInit" name="clonar">Comenzar Creación</a>
