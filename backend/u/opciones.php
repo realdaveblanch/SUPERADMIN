@@ -21,9 +21,9 @@
 
 			</div>
             <div class="contText">
-				<form  class="form-box login" method="post" action="comprobarLogin.php">
+				<form  class="form-box login" method="post" action="rename.php">
 					<?php
-							$clones = file('cfg/clones.ini');
+							$clones = file('cfg/urlselect.ini');
 								$options = '';
 								foreach ($clones as $clon) {
 									$options .= '<option value="'.$clon.'">'.$clon.'</option>';
@@ -31,14 +31,26 @@
 								$select = '<select name="clones">'.$options.'</select>';
 
 								echo $select;
-								rename("images","pictures");
+								
+								
+								
 								?>
+								<button type="submit" name="seleccionar">Select</button>
+								
+								
 				</form>
+				
+							
+								
+								
+				
 				<div class="centrarCuest">
 					
 				<div>
 			</div>
 			</div>
         </div>
+		
+
     </body>
 </html>
