@@ -149,7 +149,7 @@
 									fwrite($fp3, "/" . $data . "?id=");
 									$fp3 = fopen('cfg/urlselect.ini', 'a');
 									
-									fwrite($fp3, "../../../" . $data);
+									fwrite($fp3, "../../../" . $data . "\r\n");
 									
 									
 								}
