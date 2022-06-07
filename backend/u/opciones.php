@@ -41,19 +41,19 @@
 				</form>
 				<form  class="form-box login" method="post" action="reactivar.php">
 					<?php
-							$clones = file('cfg/urlunactive.ini');
+							$clonesinac = file('cfg/urlunactive.ini');
 								$options = '';
-								foreach ($clones as $clon) {
-									$options .= '<option value="'.$clon.'">'.$clon.'</option>';
+								foreach ($clonesinac as $clonina) {
+									$options .= '<option value="'.$clonina.'">'.$clonina.'</option>';
 								}
-								$select = '<select name="clones">'.$options.'</select>';
+								$select = '<select name="reactivar">'.$options.'</select>';
 
 								echo $select;
 								
 								
 								
 								?>
-								<button type="submit" name="reactivar">reactivar</button>
+								<button type="submit" >Reactivar</button>
 								
 								
 				</form>
