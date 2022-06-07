@@ -142,19 +142,14 @@ flush();
 echo "-------------------------------<br/>";
 echo "Limpiando...";
 
-function chmod_r($Path) {
-    $dp = opendir($Path);
-     while($File = readdir($dp)) {
-       if($File != "." AND $File != "..") {
-         if(is_dir($File)){
-            chmod($File, 0777);
-            chmod_r($Path."/".$File);
-         }else{
-             chmod($Path."/".$File, 0777);
-         }
-       }
-     }
-   closedir($dp);
+function chmod_r($path) {
+    $dir = new DirectoryIterator($path);
+    foreach ($dir as $item) {
+        chmod($item->getPathname(), 0777);
+        if ($item->isDir() && !$item->isDot()) {
+            chmod_r($item->getPathname());
+        }
+    }
 }
 
 chmod_r($src);

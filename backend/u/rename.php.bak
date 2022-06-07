@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 		
 		$clon = $_POST['clones'];	
 
-if (rename($clon, $clon . ".0")) {
+if (rename($clon, $clon . "_old")) {
 	echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=ok.php"'.">";		
 	
 } else {
