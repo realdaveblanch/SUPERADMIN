@@ -148,7 +148,7 @@
 									file_put_contents('cfg/urldefault.ini','', LOCK_EX);
 									fwrite($fp3, "/" . $data . "?id=");
 									$fp3 = fopen('cfg/urlselect.ini', 'a');
-									file_put_contents('cfg/urlselect.ini','', LOCK_EX);
+									
 									fwrite($fp3, "../../../" . $data);
 									
 									

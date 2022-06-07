@@ -4,23 +4,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 		
 		$clon = $_POST['clones'];	
 rename($clon, $clon . "_old");
+}
 //Se escribe en urlunactive, que este clon ha sido desactivado
 $fp4 = fopen('cfg/urlunactive.ini', 'a');
-	fwrite($fp4, $clon . "_old");
+fwrite($fp4, PHP_EOL .$clon . "_old");
 	
 //Se busca la línea en el select y se elimina
 
 	$key = $clon;
 $contents = '';
 $fc=file("cfg/urlselect.ini");
- foreach($fc as $line)
-  {
-    if (!strstr($line,$key))
-    {
-       $contents .= $line; 
-     }  
-  }
-  file_put_contents('cfg/urlselect.ini',$contents);
+
+
+
+$f=fopen("in_temp.txt","w");
+
+$temp = array();
+foreach($fc as $line)
+{
+    if (substr($line,$key) === false) 
+        fwrite($f, line);
+}
+fclose($f);
+unlink("cfg/urlselect.ini");
+rename("in_temp.txt", "cfg/urlselect.ini");
+
   
 	echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=ok.php"'.">";
 }

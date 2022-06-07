@@ -15,20 +15,26 @@ if(strpos($mystring, $word) !== false){
 	rename($clon, $a );
 //QUITAR PUT CONTENTS	
 	
-	
 	$key = $a;
 $contents = '';
 $fc=file("cfg/urlunactive.ini");
- foreach($fc as $line)
-  {
-    if (!strstr($line,$key))
-    {
-       $contents .= $line; 
-     }  
-  }
-  file_put_contents('cfg/urlunactive.ini',$contents);
+
+
+
+$f=fopen("in_temp2.txt","w");
+
+$temp = array();
+foreach($fc as $line)
+{
+    if (substr($line,$key) === false) 
+        fwrite($f, line);
+}
+fclose($f);
+unlink("cfg/urlunactive.ini");
+rename("in_temp2.txt", "cfg/urlunactive.ini");
+  
   $fp4 = fopen('cfg/urlselect.ini', 'a');
-	fwrite($fp4, $a);
+	fwrite($fp4, PHP_EOL . $a);
   
   
 	echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"2;URL=ok.php"'.">";
