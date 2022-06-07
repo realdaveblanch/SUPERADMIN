@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 		
 		$clon = $_POST['clones'];	
 rename($clon, $clon . "_old");
-}
+
 //Se escribe en urlunactive, que este clon ha sido desactivado
 $fp4 = fopen('cfg/urlunactive.ini', 'a');
 fwrite($fp4, PHP_EOL .$clon . "_old");
@@ -15,16 +15,14 @@ fwrite($fp4, PHP_EOL .$clon . "_old");
 $contents = '';
 $fc=file("cfg/urlselect.ini");
 
-
-
 $f=fopen("in_temp.txt","w");
 
 $temp = array();
 foreach($fc as $line)
-{
-    if (substr($line,$key) === false) 
+
+    if (substr($line,$key) === false) {
         fwrite($f, line);
-}
+	}
 fclose($f);
 unlink("cfg/urlselect.ini");
 rename("in_temp.txt", "cfg/urlselect.ini");

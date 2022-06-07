@@ -25,8 +25,8 @@ $f=fopen("in_temp2.txt","w");
 
 $temp = array();
 foreach($fc as $line)
-{
-    if (substr($line,$key) === false) 
+
+    if (substr($line,$key) === false) {
         fwrite($f, line);
 }
 fclose($f);
