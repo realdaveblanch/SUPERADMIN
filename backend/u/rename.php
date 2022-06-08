@@ -3,6 +3,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 		//Guardo el valor  "numIDs" introducido en el formulario "ad.php" y lo guardo en $numIDs
 		
 		$clon = $_POST['clones'];	
+<<<<<<< HEAD
 
 if (rename($clon, $clon . ".0")) {
 	echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=ok.php"'.">";		
@@ -43,8 +44,12 @@ rename("in_temp.txt", "cfg/urlselect.ini");
 }
 else {
 	echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=fail.php"'.">";
+=======
+rename($clon, $clon . "_old");
+$fp4 = fopen('cfg/urlunactive.ini', 'a');
+		file_put_contents('cfg/urlunactive.ini','', LOCK_EX);
+	fwrite($fp4, $clon . "_old");
+>>>>>>> parent of 411569d (activar desactivar funcionando corectamente)
 }
 
-
- 
 ?>

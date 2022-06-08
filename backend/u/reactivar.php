@@ -6,6 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 $clon = $_POST['reactivar'];	
 
 
+<<<<<<< HEAD
 
 
 
@@ -47,9 +48,18 @@ if (rename($clon, $a)) {
   
   
 	echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"2;URL=ok.php"'.">";
+=======
+$word = "_old";
+$mystring = $clon;
+ 
+// Test if string contains the word 
+if(strpos($mystring, $word) !== false){
+	$a = substr($clon, 0, -4);
+	echo $a;
+	rename($clon, $a );
+>>>>>>> parent of 411569d (activar desactivar funcionando corectamente)
 } else{
     echo "No está inactivo!";
-	echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"2;URL=fail.php"'.">";
 }
 
 
