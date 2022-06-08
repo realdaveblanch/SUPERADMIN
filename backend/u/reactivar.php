@@ -27,19 +27,15 @@ fclose($f);
 unlink("cfg/urlunactive.ini");
 rename("in_temp2.txt", "cfg/urlunactive.ini");
 
-$word = "_old";
+$word = ".0";
 $mystring = $clon;
 if(strpos($mystring, $word) !== false){
-	$a = substr($clon, 0, -4);
+	$a = substr($clon, 0, -2);
 	
 if (rename($clon, $a)) {
-	$message = sprintf(
-		'The file %s was renamed to %s successfully!'		
-	);
+	echo "OK";
 } else {
-	$message = sprintf(
-		'There was an error renaming file %s'
-	);
+	echo "FAIL";
 }
 
   

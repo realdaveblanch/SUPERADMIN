@@ -3,26 +3,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 		//Guardo el valor  "numIDs" introducido en el formulario "ad.php" y lo guardo en $numIDs
 		
 		$clon = $_POST['clones'];	
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 
+=======
+rename($clon, 'holaaaaa');
+>>>>>>> Stashed changes
 if (rename($clon, $clon . ".0")) {
-	echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=ok.php"'.">";		
-	
-} else {
-
-			echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=fail.php"'.">";
-	
-}
-
-
-
-
 //Se escribe en urlunactive, que este clon ha sido desactivado
 $fp4 = fopen('cfg/urlunactive.ini', 'a');
-fwrite($fp4, $clon . "_old" ."\r\n");
+fwrite($fp4, $clon . ".0" ."\r\n");
 	
-//Se busca la línea en el select y se elimina
 
+
+
+//Se busca la línea en el select y se elimina
 $key = $clon;
 $contents = '';
 $fc=file("cfg/urlselect.ini");
@@ -38,6 +33,18 @@ foreach($fc as $line)
 fclose($f);
 unlink("cfg/urlselect.ini");
 rename("in_temp.txt", "cfg/urlselect.ini");
+	echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=ok.php"'.">";		
+	
+} else {
+
+			echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=fail.php"'.">";
+	
+}
+
+
+
+
+
 
   
 
