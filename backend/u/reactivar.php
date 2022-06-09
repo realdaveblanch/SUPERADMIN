@@ -5,12 +5,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 $clon = $_POST['reactivar'];	
 
-
-<<<<<<< HEAD
-
-
-
-
 	
 	$key = $a;
 $contents = '';
@@ -53,10 +47,7 @@ if(strpos($mystring, $word) !== false){
 	$a = substr($clon, 0, -4);
 	echo $a;
 	rename($clon, $a );
-<<<<<<< HEAD
->>>>>>> parent of 411569d (activar desactivar funcionando corectamente)
-=======
->>>>>>> parent of 411569d (activar desactivar funcionando corectamente)
+
 } else{
     echo "No está inactivo!";
 }
