@@ -51,7 +51,7 @@
 								</div>
 							</div>		
 				<! -- FIN banner del admin -->
-				<button class="salir3" onclick ="location.href='logout.php'">Cerrar Sesión</button><br/><br/>
+
 				<div class="contText">
 					<div class="form-box">
 						<h1 style="text-align: center;margin-top: 3px;">CREAR CUESTIONARIOS</h1><br/>
@@ -59,6 +59,7 @@
 						
 						<div class="copiaaadmin" id="copia">
 								<a href="zip.php" class="btn btn-grey btnInit" name="copia">Realizar copia de seguridad</a>
+												<button class="salir3" onclick ="location.href='logout.php'">Cerrar Sesión</button><br/><br/>
 							</div>
 							<div class="vercopia" id="vercopia">
 								<a href="opciones.php" class="btn btn-grey btnInit" name="vercopia">Opciones de los clones</a>

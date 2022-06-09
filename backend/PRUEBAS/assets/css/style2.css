@@ -96,6 +96,12 @@
   color: white;
 }
 
+.atrasDere2{
+  float: right;
+  background-color: black;
+  color: white;
+}
+
 .atrasIzq{
   float: left;
   background-color: black;
@@ -364,6 +370,14 @@ textarea:focus-visible {
   }
 }
 
+@media (max-width: 525px) {
+  .atrasDere2{
+    margin-left: 42%;
+    margin-top: 15px;
+    float: none;
+  }
+}
+
 @media (max-width: 449px) {
   .divPreguntas input[type=text]{
     width: 48%;
@@ -423,6 +437,12 @@ textarea:focus-visible {
   .rc{
     width: 49%;
   }
+
+  .atrasDere2{
+    margin-left: 42%;
+    margin-top: 15px;
+    float: none;
+  }
 }
 
 @media (max-width: 390px) {
@@ -447,6 +467,12 @@ textarea:focus-visible {
 @media (max-width: 375px) {
   .atrasIzq{
     margin-left: 135px;
+  }
+
+  .atrasDere2{
+    margin-left: 43%;
+    margin-top: 15px;
+    float: none;
   }
 }
 

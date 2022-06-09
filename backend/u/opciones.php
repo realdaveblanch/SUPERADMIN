@@ -25,7 +25,7 @@
 					<?php
 					$files = glob('cfg/clones/activos/*.ini');
 					while(list($i, $filename) = each($files)){
-					   //what you have now
+					   
 					
 							$clones = file_get_contents($files);
 								$options = '';
@@ -50,7 +50,7 @@
 					<?php
 					$filesdes = glob('cfg/clones/desactivados/*.ini');
 					while(list($i, $filename) = each($filesdes)){
-					   //what you have now
+					   
 					
 							$clones = file_get_contents($filesdes);
 								$options = '';

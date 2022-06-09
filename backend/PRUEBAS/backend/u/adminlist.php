@@ -44,7 +44,7 @@
 					<a href="ad.php">ADMIN PANEL</a>
 					<a href="formu.php">MODIFICAR CUESTIONARIO</a>
 					<a href="logo.php">SUBIR LOGO CLIENTE</a>
-					<a href="clonado.php">MENÚ DE CLONADO</a>
+					<a href="usupass.php">CAMBIAR CONTRASEÑA</a>
 					<a href="https://drive.google.com/file/d/1sUcsZNbvDgKrQuJyZtfjNFcolfHKtAxP/view?usp=sharing">AYUDA</a>
 					<a href="logout.php">CERRAR SESIÓN</a>
 				</div>
@@ -66,8 +66,6 @@
 						<?php
 							include 'url.php';
 							//Tener en cuenta si el protocolo utilizado es http/https, alta posibilidad de error						
-							$cont=0;
-							$cont2=0;
 							echo '<h1 class="aba" style="font-size: 36px;">LISTA DE LINK VALIDOS</h1>';
 						?>
 						<!-- código ajax descargar resultados -->
@@ -105,8 +103,11 @@
 						<!-- FIN código ajax descargar resultados -->						
 						<button class="salir3" onclick ="location.href='ad.php'">Atrás</button><br/><br/>
 						<?php
+							$cont=0;
+							$cont2=0;
+
 							if (!is_file("../validos.php")) {
-								echo "<h3>No hay cuestionarios creados. Tienes que crear algún cuestionario.</h3>";
+								echo '<p style="font-size: 24px;">No hay cuestionarios creados. Tienes que crear algún cuestionario.</p>';
 							}
 							else{
 								echo '<div class="disponibles2" id="disponibles">'; 
@@ -138,68 +139,77 @@
 								$maxLinks = $cont2-1;
 								//pre resultados para lastcuest
 								$totalhechos = ($maxLinks - $cont);
-								echo "<div class=" . '"' . "numCuestadmin" . '"'. ">";
 								//echo "<h4>Cuestionarios disponibles " . $cont. ' de '. $maxLinks ."</h4>";
 								//echo "<div>";
 								//echo "</div>";
+							}
+							
+							if (!is_file("../validos.php")) {
+								echo "";
+							}
+							else{
+						?>
+						<div class="numCuestadmin">
+							<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+							<script>
+								$(document).ready(function () {
+									setInterval( function() {
+										$("#disponibles").load(location.href + " #disponibles");
+									}, 3000 );
+								});
+							</script>
+							<! -- ultimo cuestionario -->
+							<div class="otherstats" id="last">
+								<?php
+									//estado último cuestionario realizado
+									//Se declara la lectura del fichero como $fh
+									$fh = fopen("cfg/lastcuest2.ini", 'r');
+										//El valor 25000 representa el número de bytes leídos en buffer ya que el fichero lascuest es leído en binario.
+										echo "<br/>";
+										$pageText = fread($fh, 25000);
+	                                    //Pinta por pantalla "$pageText" que es el contenido de "$lastcuest" con un salto de línea.
+										echo nl2br($pageText);
+										echo '<p><span style="font-weight: bold;"> Total realizados: </span>' . '<span style="color:#01a49e; font-weight: bold; ">' .  $totalhechos . " de " . $maxLinks . '</span></p>';
+									fclose($fh);
+
+									//numero de comentarios
+									//Se declara la lectura del fichero como $fh
+									$fh = fopen("cfg/comentarios.ini", 'r');
+										//El valor 25000 representa el número de bytes leídos en buffer ya que el fichero lascuest es leído en binario.
+										echo "<br/>";
+
+										echo '<p>';
+	                                    $pageText2 = fread($fh, 25000);
+	                                    //Pinta por pantalla "$pageText" que es el contenido de "$lastcuest" con un salto de línea.
+										echo '<span style="font-weight: bold;"> Total comentarios: </span>';
+										echo '<span style="color:#01a49e; font-weight: bold;">' . nl2br($pageText2) . '</span>';
+										echo "<p/>";
+										echo "<br/>";	
+									fclose($fh);
+									
+									include("online.php");
+								?>
+								<span style="font-weight: bold;"> Realizandose ahora: </span>
+								<span style="color:#01a49e; font-weight: bold;"><?php echo $visitors_online;?></span>
+							</div>
+							<! -- ultimo cuestionario, EN DIRECTO CADA 3 SEGUNDOS -->
+							<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+							<script>
+								$(document).ready(function () {
+									setInterval( function() {
+										$("#last").load(location.href + " #last");
+									}, 3000 );
+								});
+							</script>
+							<! -- ultimo cuestionario -->
+							</span>	
+						</div>
+						<?php
 							}
 							//CODE BY
 							//https://github.com/realdaveblanch
 							//https://github.com/X-aaron-X
 						?>
-						<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-						<script>
-							$(document).ready(function () {
-								setInterval( function() {
-									$("#disponibles").load(location.href + " #disponibles");
-								}, 3000 );
-							});
-						</script>
-						<! -- ultimo cuestionario -->
-						<div class="otherstats" id="last">
-							<?php
-								//estado último cuestionario realizado
-								//Se declara la lectura del fichero como $fh
-								$fh = fopen("cfg/lastcuest2.ini", 'r');
-									//El valor 25000 representa el número de bytes leídos en buffer ya que el fichero lascuest es leído en binario.
-									echo "<br/>";
-									$pageText = fread($fh, 25000);
-                                    //Pinta por pantalla "$pageText" que es el contenido de "$lastcuest" con un salto de línea.
-									echo nl2br($pageText);
-									echo '<p><span style="font-weight: bold;"> Total realizados: </span>' . '<span style="color:#01a49e; font-weight: bold; ">' .  $totalhechos . " de " . $maxLinks . '</span></p>';
-								fclose($fh);
-
-								//numero de comentarios
-								//Se declara la lectura del fichero como $fh
-								$fh = fopen("cfg/comentarios.ini", 'r');
-									//El valor 25000 representa el número de bytes leídos en buffer ya que el fichero lascuest es leído en binario.
-									echo "<br/>";
-
-									echo '<p>';
-                                    $pageText2 = fread($fh, 25000);
-                                    //Pinta por pantalla "$pageText" que es el contenido de "$lastcuest" con un salto de línea.
-									echo '<span style="font-weight: bold;"> Total comentarios: </span>';
-									echo '<span style="color:#01a49e; font-weight: bold;">' . nl2br($pageText2) . '</span>';
-									echo "<p/>";
-									echo "<br/>";	
-								fclose($fh);
-								
-								include("online.php");
-							?>
-							<span style="font-weight: bold;"> Realizandose ahora: </span><span style="color:#01a49e; font-weight: bold;"><?php echo $visitors_online;?></<span>
-						</div>
-						<! -- ultimo cuestionario, EN DIRECTO CADA 3 SEGUNDOS -->
-						<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-						<script>
-							$(document).ready(function () {
-								setInterval( function() {
-									$("#last").load(location.href + " #last");
-								}, 3000 );
-							});
-						</script>
-						<! -- ultimo cuestionario -->	
-						  
-						</div>
 					</div>
 				</div>
 			</div>

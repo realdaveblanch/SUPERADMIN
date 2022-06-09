@@ -117,7 +117,7 @@
 				<a href="ad.php">ADMIN PANEL</a>
 				<a href="formu.php">MODIFICAR CUESTIONARIO</a>
 				<a href="logo.php">SUBIR LOGO CLIENTE</a>
-				<a href="clonado.php">MENÚ DE CLONADO</a>
+				<a href="usupass.php">CAMBIAR CONTRASEÑA</a>
 				<a href="https://drive.google.com/file/d/1sUcsZNbvDgKrQuJyZtfjNFcolfHKtAxP/view?usp=sharing">AYUDA</a>
 				<a href="logout.php">CERRAR SESIÓN</a>
 			</div>

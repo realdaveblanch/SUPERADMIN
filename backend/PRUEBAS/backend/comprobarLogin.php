@@ -4,9 +4,12 @@
     //Cogemos los valores del formulario y los pasamos a unas variables
     $usuario = $_POST["usuario"];
     $pass = $_POST["pass"];
+
+    $cliente = file_get_contents('u/cfg/ssap/ssapetnecli.ini');
+    $ad = file_get_contents('u/cfg/ssap/ssapnimda.ini');
     
     //Credenciales del panel de administrador.
-    if($usuario == "admin" and $pass == "admin"){
+    if($usuario == "admin" and $pass == trim($ad) ){
       session_start(); 
       //Se añade la zona horaria actual para el admin
       date_default_timezone_set("Europe/Madrid");
@@ -25,7 +28,7 @@
       exit();
     }
     //Credenciales del panel del cliente.
-    elseif($usuario == "ibersys" and $pass == "ibersys"){
+    elseif($usuario == "ibersys" and $pass == trim($cliente)){
       session_start(); 
       //Se asigna un cookie al inicio de sesion del cliente
       $random= rand(0, 9999999);

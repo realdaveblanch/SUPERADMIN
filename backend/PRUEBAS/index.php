@@ -6,7 +6,6 @@
     setcookie("cuestionario", $cookie, time()+ 3600,'/'); 
     // la cookie expira a la hora y la sesión será destruida automáticamente
 
-
     $dbfile = "backend/u/cfg/conectados.db"; // ruta a la base de datos de conectados
     $expire = 1300; //tiempo para considerar a alguien online 21 MIN;) (después de este tiempo la ip expira y el contador baja)
     //Si la base de datos no existe mostraba un, mensaje 
@@ -54,6 +53,9 @@
     }
     //Se activa la función de contar activos dando soporte a la db
     $visitors_online = contaractivos();
+
+    //Guardar la "$id" en una sesion
+    $_SESSION['id'] = htmlspecialchars($_GET["id"]);
 ?>
 <!DOCTYPE html>
 <html lang="es">

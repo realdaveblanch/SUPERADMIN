@@ -7,8 +7,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 		$interno = file_get_contents($clon);
 
 
-echo $interno;
-}
+
+
 rename($interno, $interno . "_old" );
 
 
@@ -23,6 +23,6 @@ $destino = 'cfg/clones/desactivados';
 move_file($clon, $destino);
 	
 //Hay que buscar line en select y eliminar
-echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"2;URL=ok.php"'.">";
-
+echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=ok.php"'.">";
+}
 ?>

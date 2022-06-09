@@ -38,8 +38,17 @@
 		unlink('dg/sinConvertir.ini');
 	}
 
+	//Borra la carpeta "res" y su contenido
 	$folderName = '../res';
 	removeFiles($folderName);
+
+	//Borra la carpeta "comentarios" y su contenido
+	//$folderName = 'respaldo/comentarios';
+	//removeFiles($folderName);
+
+	//Borra la carpeta "resultados" y su contenido
+	//$folderName = 'respaldo/resultados';
+	//removeFiles($folderName);
 
 	//La funcion borrara la carpeta res y todo su contenido
 	function removeFiles($target) {
@@ -65,6 +74,8 @@
 	file_put_contents("u/cfg/lastcuest2.ini",'' );
 	//Se borra la base de datos de visitas 
 	file_put_contents("u/cfg/conectados.db",'' );
+	//Se borra la fecha de cuando se hizo el cuestionario
+	file_put_contents("u/cfg/fecha.ini",'' );
 
 	$ua = $_SERVER['HTTP_USER_AGENT'];
 	$id = sha1(rand(111111,999999));

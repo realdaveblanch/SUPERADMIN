@@ -4,7 +4,7 @@
 		echo ''; 
 	}
 	else {
-		echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=../admin/index.php"'.">";
+		echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=../"'.">";
 		include 'ip.php';		
 		exit;
 	}
@@ -49,7 +49,7 @@
 					<a href="ad.php">ADMIN PANEL</a>
 					<a href="formu.php">MODIFICAR CUESTIONARIO</a>
 					<a href="logo.php">SUBIR LOGO CLIENTE</a>
-					<a href="clonado.php">MENÚ DE CLONADO</a>
+					<a href="usupass.php">CAMBIAR CONTRASEÑA</a>
 					<a href="https://drive.google.com/file/d/1sUcsZNbvDgKrQuJyZtfjNFcolfHKtAxP/view?usp=sharing">AYUDA</a>
 					<a href="logout.php">CERRAR SESIÓN</a>
 				</div>
@@ -78,6 +78,33 @@
 				<! -- PORCENTAJES -->
 				<div id="estados" style="width: 304px;margin: 0 auto;">
 					<?php
+						//Guardo la ruta completa de este fichero
+						$ruta = __FILE__;
+						echo $ruta . "<br>";
+
+						//Pongo la "$ruta" en minusculas por si la carpeta esta en mayusculas
+						//Coge la "$ruta" y empieza a contar desde el caracter 19 --> el numero "19" dependera desde donde se esta ejecutando la aplicacion
+						//Quito los caracteres especias para que se quede limpio
+						$limpiandoRuta = strtolower(substr(preg_replace('/[^a-zA-Z0-9_ %\[\]\.\(\)%&-]/s', ",", $ruta), 19));
+						echo $limpiandoRuta . "<br>";
+
+						$rutaLimpia = explode(",", $limpiandoRuta);
+						echo $rutaLimpia[0];
+
+						//Cogemos el contenido de "url.in" y pasamos todo a minusculas
+						$limpiandoUrl = strtolower(substr(file_get_contents('cfg/url.ini'), 1));
+						//Quitamos todo lo que este a la derecha de "?"
+						$urlLimpia = strstr($limpiandoUrl, "?", true);
+						
+						if ($rutaLimpia[0] !== $urlLimpia) {
+							?>
+								<div class="resetear" style="margin-left: 59px; margin-bottom: -20px;">
+									<i class="material-icons" style="color: #a64c4c; font-size: 53px;">warning</i>
+									<span>URL INCORRECTA </span>
+								</div>	
+							<?php
+						}
+
 						if (!is_file("../validos.php")) {
 							echo "";
 								}
@@ -105,19 +132,14 @@
 								}
 							fclose($idsValidos);
 							$maxLinks = $cont2-1;
-						//pre resultados para lastcuest
-						$totalhechos = ($maxLinks - $cont);
-						//Se calcula el porcentaje
-						$preresult = ($cont / $maxLinks);
-												
-						$result = $preresult * 100;
-							}		
-						//pre resultados para lastcuest
-						$totalhechos = ($maxLinks - $cont);
-						//Se calcula el porcentaje
-						$preresult = ($cont / $maxLinks);
-												
-						$result = $preresult * 100;
+							
+							//pre resultados para lastcuest
+							$totalhechos = ($maxLinks - $cont);
+							//Se calcula el porcentaje
+							$preresult = ($cont / $maxLinks);
+													
+							$result = $preresult * 100;
+						}		
 					?>
 					<div class="estados">
 						<div class="chart">
@@ -210,6 +232,8 @@
 									$fp4 = fopen('cfg/hostname.ini', 'a');
 									file_put_contents('cfg/hostname.ini','', LOCK_EX);
 									fwrite($fp4, $data);
+
+									echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=ad.php"'.">";
 								}
 								
 								//CODE BY

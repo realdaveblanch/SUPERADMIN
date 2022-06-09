@@ -19,7 +19,6 @@
 				   .$directoriosArray[8].$directoriosArray[9].$directoriosArray[10].$directoriosArray[11].$directoriosArray[12].".json";
 
 	date_default_timezone_set("Europe/Madrid");
-	$fecha = date("G_i-m-d-y");
 	file_put_contents($filefull, $_POST['data']);
 
 	if(file_exists($respuestas_SRC.$directorioArchivo.$fileName)) {

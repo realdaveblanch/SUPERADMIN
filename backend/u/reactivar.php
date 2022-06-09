@@ -2,16 +2,13 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
 		//Guardo el valor  "numIDs" introducido en el formulario "ad.php" y lo guardo en $numIDs
 
-}
+
 $clon = $_POST['reactivar'];	
 
 $interno = file_get_contents($clon);
 
-
-echo $interno;
-
   
-rename($interno . "_old", $interno . "" );
+rename($interno . "_old", $interno);
 	
 	function move_file($file, $to){
     $path_parts = pathinfo($file);
@@ -22,8 +19,9 @@ rename($interno . "_old", $interno . "" );
 }
 $destino = 'cfg/clones/activos';
 move_file($clon, $destino);
+}
 
-	echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"2;URL=ok.php"'.">";
+	echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=ok.php"'.">";
 
 
 

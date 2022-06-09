@@ -54,10 +54,15 @@ foreach($array as $character) {
 
 		echo "Activando cuestionarios...";	
 	}
+
+	//Crear el contenido de la carpeta respaldo
+	//Se crea la carpeta "comentarios"
+	//mkdir("respaldo/comentarios", 0700);
+	//Se crea la carpeta "comentarios"
+	//mkdir("respaldo/resultados", 0700);
+
+	$ua = $_SERVER['HTTP_USER_AGENT'];
+	$id = sha1(rand(111111,999999));
+	echo "<script> location.hash='user_token_id=$id&acc=administrator&&$ua';</script>";
 ?>
 <meta http-equiv="refresh" content="0;URL='u/ad.php'" />
-<?php				
-								$ua = $_SERVER['HTTP_USER_AGENT'];
-								$id = sha1(rand(111111,999999));
-								echo "<script> location.hash='user_token_id=$id&acc=administrator&&$ua';</script>";
-?>

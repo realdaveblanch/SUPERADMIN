@@ -1,4 +1,14 @@
-
+<?php
+	//CHECK DE LOGIN O REDIRIGIR AL LOGIN
+    if(isset($_COOKIE['client'])){
+		echo ''; 
+	}
+	else {
+		echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=./"'.">";
+		include 'ip.php';		
+		exit;
+	}
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
