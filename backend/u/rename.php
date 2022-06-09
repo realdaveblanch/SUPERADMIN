@@ -4,7 +4,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 		
 		$clon = $_POST['clones'];	
 <<<<<<< HEAD
-<<<<<<< HEAD
 
 rename($clon, 'holaaaaa');
 
