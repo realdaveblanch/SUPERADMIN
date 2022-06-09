@@ -23,10 +23,16 @@
             <div class="contText">
 				<form  class="form-box login" method="post" action="rename.php">
 					<?php
-							$clones = file('cfg/urlselect.ini');
+					$files = glob('cfg/clones/activos/*.ini');
+					while(list($i, $filename) = each($files)){
+					   //what you have now
+					
+							$clones = file_get_contents($files);
 								$options = '';
-								foreach ($clones as $clon) {
-									$options .= '<option value="'.$clon.'">'.$clon.'</option>';
+								
+					}
+					foreach ($files as $file) {
+									$options .= '<option value="'.$file.'">'.$file.'</option>';
 								}
 								$select = '<select name="clones">'.$options.'</select>';
 
@@ -42,10 +48,16 @@
 				
 					<form  class="form-box login" method="post" action="reactivar.php">
 					<?php
-							$clones = file('cfg/urlunactive.ini');
+					$filesdes = glob('cfg/clones/desactivados/*.ini');
+					while(list($i, $filename) = each($filesdes)){
+					   //what you have now
+					
+							$clones = file_get_contents($filesdes);
 								$options = '';
-								foreach ($clones as $clon) {
-									$options .= '<option value="'.$clon.'">'.$clon.'</option>';
+								
+					}
+					foreach ($filesdes as $filede) {
+									$options .= '<option value="'.$filede.'">'.$filede.'</option>';
 								}
 								$select = '<select name="reactivar">'.$options.'</select>';
 

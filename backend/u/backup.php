@@ -117,9 +117,11 @@ if (!copy($fp5, $newfilehost)) {
     echo "COPIA HOSTNAME FALLIDA";
 }
 //Se escribe el nuevo clon a clones.ini
+
 $fp6 = fopen('cfg/clones.ini', 'a');
 file_put_contents('cfg/clones.ini', $dst . "/backend" . "\r\n", FILE_APPEND | LOCK_EX);
-file_put_contents('cfg/urlselect.ini', $dst . PHP_EOL);
+$nombreini = file_get_contents('cfg/hostnametemp.ini', 'a');
+file_put_contents('cfg/clones/activos/' . $nombreini . ".ini" , $dst . PHP_EOL);
 ob_end_clean();
 sleep(1);
 echo "<br/>";
