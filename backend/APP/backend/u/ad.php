@@ -88,6 +88,7 @@
 						$limpiandoRuta = strtolower(substr(preg_replace('/[^a-zA-Z0-9_ %\[\]\.\(\)%&-]/s', ",", $ruta), 19));
 						echo $limpiandoRuta . "<br>";
 
+						//Lo convierto en array y que los separe por las comas ","
 						$rutaLimpia = explode(",", $limpiandoRuta);
 						echo $rutaLimpia[0];
 
@@ -96,6 +97,7 @@
 						//Quitamos todo lo que este a la derecha de "?"
 						$urlLimpia = strstr($limpiandoUrl, "?", true);
 						
+						//Si "$rutaLimpia[0]" es distinto que "$urlLimpia"
 						if ($rutaLimpia[0] !== $urlLimpia) {
 							?>
 								<div class="resetear" style="margin-left: 59px; margin-bottom: -20px;">
@@ -107,7 +109,7 @@
 
 						if (!is_file("../validos.php")) {
 							echo "";
-								}
+						}
 						else{
 							//Cargamos los datos del archivo "valido.php" con permisos de lectura
 							$idsValidos = fopen("../validos.php", "r");

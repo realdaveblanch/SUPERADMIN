@@ -468,6 +468,191 @@
 											></textarea><br/><br/>
 										</div>
 									</div>
+
+									<div>
+										<label>Pregunta 11:</label><br/>
+										<label>Introduce la pregunta y las opciones separadas por "punto y coma".</label><br/>
+										<div class="abajoPregunta">
+											<input type="checkbox" name="opciones[]" value="pregunta11">
+											<label>ACTIVAR</label>
+											<input type="text" autocomplete="off" name="pregunta11-op1" placeholder="<?php
+												if (filesize('preguntas/pregunta11.ini') == 0) {
+											 		echo "Introduce aquí la pregunta \r\n";
+											 	}
+											 	else{
+											 		echo file_get_contents('preguntas/pregunta11.ini');
+											 	}
+											?>"
+											/><br/><br/>
+											<textarea name="pregunta11-op2" rows="2" placeholder ="<?php
+											 		$valor = 3;
+											 		$lineas = file('../../assets/js/pregunta11.json', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+											 		if (filesize('../../assets/js/pregunta11.json') == 0) {
+												 		echo "Separa las opciones a introducir por punto y coma ';' por ejemplo: \r\n";
+											 			echo "ejemplo1;ejemplo2;ejemplo3;ejemplo4;ejemplo5;ejemplo6;ejemplo7;ejemplo8;ejemplo9;ejemplo10";
+												 		goto end11;
+												 	}
+
+											 		foreach ($lineas as $numLinea => $linea) {
+											 			if($numLinea == $valor) {
+											 				echo  substr(htmlspecialchars($linea), 15);
+											 				$valor = $valor + 4;
+											 			}	
+													}
+														end11:	
+											 	?>"
+											></textarea><br/><br/>
+										</div>
+									</div>
+
+									<div>
+										<label>Pregunta 12:</label><br/>
+										<label>Introduce la pregunta y las opciones separadas por "punto y coma".</label><br/>
+										<div class="abajoPregunta">
+											<input type="checkbox" name="opciones[]" value="pregunta12">
+											<label>ACTIVAR</label>
+											<input type="text" autocomplete="off" name="pregunta12-op1" placeholder="<?php
+												if (filesize('preguntas/pregunta12.ini') == 0) {
+											 		echo "Introduce aquí la pregunta \r\n";
+											 	}
+											 	else{
+											 		echo file_get_contents('preguntas/pregunta12.ini');
+											 	}
+											?>"
+											/><br/><br/>
+											<textarea name="pregunta12-op2" rows="2" placeholder ="<?php
+											 		$valor = 3;
+											 		$lineas = file('../../assets/js/pregunta12.json', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+											 		if (filesize('../../assets/js/pregunta12.json') == 0) {
+												 		echo "Separa las opciones a introducir por punto y coma ';' por ejemplo: \r\n";
+											 			echo "ejemplo1;ejemplo2;ejemplo3;ejemplo4;ejemplo5;ejemplo6;ejemplo7;ejemplo8;ejemplo9;ejemplo10";
+												 		goto end12;
+												 	}
+
+											 		foreach ($lineas as $numLinea => $linea) {
+											 			if($numLinea == $valor) {
+											 				echo  substr(htmlspecialchars($linea), 15);
+											 				$valor = $valor + 4;
+											 			}	
+													}
+														end12:	
+											 	?>"
+											></textarea><br/><br/>
+										</div>
+									</div>
+
+									<div>
+										<label>Pregunta 13:</label><br/>
+										<label>Introduce la pregunta y las opciones separadas por "punto y coma".</label><br/>
+										<div class="abajoPregunta">
+											<input type="checkbox" name="opciones[]" value="pregunta13">
+											<label>ACTIVAR</label>
+											<input type="text" autocomplete="off" name="pregunta13-op1" placeholder="<?php
+												if (filesize('preguntas/pregunta13.ini') == 0) {
+											 		echo "Introduce aquí la pregunta \r\n";
+											 	}
+											 	else{
+											 		echo file_get_contents('preguntas/pregunta13.ini');
+											 	}
+											?>"
+											/><br/><br/>
+											<textarea name="pregunta13-op2" rows="2" placeholder ="<?php
+											 		$valor = 3;
+											 		$lineas = file('../../assets/js/pregunta13.json', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+											 		if (filesize('../../assets/js/pregunta13.json') == 0) {
+												 		echo "Separa las opciones a introducir por punto y coma ';' por ejemplo: \r\n";
+											 			echo "ejemplo1;ejemplo2;ejemplo3;ejemplo4;ejemplo5;ejemplo6;ejemplo7;ejemplo8;ejemplo9;ejemplo10";
+												 		goto end13;
+												 	}
+
+											 		foreach ($lineas as $numLinea => $linea) {
+											 			if($numLinea == $valor) {
+											 				echo  substr(htmlspecialchars($linea), 15);
+											 				$valor = $valor + 4;
+											 			}	
+													}
+														end13:	
+											 	?>"
+											></textarea><br/><br/>
+										</div>
+									</div>
+
+									<div>
+										<label>Pregunta 14:</label><br/>
+										<label>Introduce la pregunta y las opciones separadas por "punto y coma".</label><br/>
+										<div class="abajoPregunta">
+											<input type="checkbox" name="opciones[]" value="pregunta14">
+											<label>ACTIVAR</label>
+											<input type="text" autocomplete="off" name="pregunta14-op1" placeholder="<?php
+												if (filesize('preguntas/pregunta14.ini') == 0) {
+											 		echo "Introduce aquí la pregunta \r\n";
+											 	}
+											 	else{
+											 		echo file_get_contents('preguntas/pregunta14.ini');
+											 	}
+											?>"
+											/><br/><br/>
+											<textarea name="pregunta14-op2" rows="2" placeholder ="<?php
+											 		$valor = 3;
+											 		$lineas = file('../../assets/js/pregunta14.json', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+											 		if (filesize('../../assets/js/pregunta14.json') == 0) {
+												 		echo "Separa las opciones a introducir por punto y coma ';' por ejemplo: \r\n";
+											 			echo "ejemplo1;ejemplo2;ejemplo3;ejemplo4;ejemplo5;ejemplo6;ejemplo7;ejemplo8;ejemplo9;ejemplo10";
+												 		goto end14;
+												 	}
+
+											 		foreach ($lineas as $numLinea => $linea) {
+											 			if($numLinea == $valor) {
+											 				echo  substr(htmlspecialchars($linea), 15);
+											 				$valor = $valor + 4;
+											 			}	
+													}
+														end14:	
+											 	?>"
+											></textarea><br/><br/>
+										</div>
+									</div>
+
+									<div>
+										<label>Pregunta 15:</label><br/>
+										<label>Introduce la pregunta y las opciones separadas por "punto y coma".</label><br/>
+										<div class="abajoPregunta">
+											<input type="checkbox" name="opciones[]" value="pregunta15">
+											<label>ACTIVAR</label>
+											<input type="text" autocomplete="off" name="pregunta15-op1" placeholder="<?php
+												if (filesize('preguntas/pregunta15.ini') == 0) {
+											 		echo "Introduce aquí la pregunta \r\n";
+											 	}
+											 	else{
+											 		echo file_get_contents('preguntas/pregunta15.ini');
+											 	}
+											?>"
+											/><br/><br/>
+											<textarea name="pregunta15-op2" rows="2" placeholder ="<?php
+											 		$valor = 3;
+											 		$lineas = file('../../assets/js/pregunta15.json', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+											 		if (filesize('../../assets/js/pregunta15.json') == 0) {
+												 		echo "Separa las opciones a introducir por punto y coma ';' por ejemplo: \r\n";
+											 			echo "ejemplo1;ejemplo2;ejemplo3;ejemplo4;ejemplo5;ejemplo6;ejemplo7;ejemplo8;ejemplo9;ejemplo10";
+												 		goto end15;
+												 	}
+
+											 		foreach ($lineas as $numLinea => $linea) {
+											 			if($numLinea == $valor) {
+											 				echo  substr(htmlspecialchars($linea), 15);
+											 				$valor = $valor + 4;
+											 			}	
+													}
+														end15:	
+											 	?>"
+											></textarea><br/><br/>
+										</div>
+									</div>
 									<!-- //INTRODUCE DE AQUÍ PARA ABAJO EL CÓDIGO PARA OPCIONES DE LAS PREGUNTAS, PON CUANTAS QUIERAS -->	
 									
 									<!-- //FIN CODIGO AÑADIR PREGUNTAS -->

@@ -445,6 +445,11 @@ $("body").on('click', '.init .btn', function(){
 	$questionLlood.cargarSelect("pregunta8");
 	$questionLlood.cargarSelect("pregunta9");
 	$questionLlood.cargarSelect("pregunta10");
+	$questionLlood.cargarSelect("pregunta11");
+	$questionLlood.cargarSelect("pregunta12");
+	$questionLlood.cargarSelect("pregunta13");
+	$questionLlood.cargarSelect("pregunta14");
+	$questionLlood.cargarSelect("pregunta15");
 	
 	
 	//DESCOMENTA LO DE ABAJO Y COPIA Y PEGA LO QUE SEA NECESARIO
@@ -497,7 +502,12 @@ $("body").on('click', '.continueSelect', function(){
 		$('#pregunta7').val(),
 		$('#pregunta8').val(),
 		$('#pregunta9').val(),
-		$('#pregunta10').val()
+		$('#pregunta10').val(),
+		$('#pregunta11').val(),
+		$('#pregunta12').val(),
+		$('#pregunta13').val(),
+		$('#pregunta14').val(),
+		$('#pregunta15').val()
 		
 		//$('#NombreDelJson').val(),
 
