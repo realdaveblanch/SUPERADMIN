@@ -1,4 +1,14 @@
 <?php
+
+//CHECK DE LOGIN O REDIRIGIR AL LOGIN
+    if(isset($_COOKIE['suprpowers'])){
+		echo ''; 
+	}
+	else {
+		echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=../"'.">";
+		include 'ip.php';		
+		exit;
+	}
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
 		//Guardo el valor  "numIDs" introducido en el formulario "ad.php" y lo guardo en $numIDs
 		

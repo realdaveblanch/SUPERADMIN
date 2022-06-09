@@ -1,10 +1,20 @@
-
+<?php
+//CHECK DE LOGIN O REDIRIGIR AL LOGIN
+    if(isset($_COOKIE['suprpowers'])){
+		echo ''; 
+	}
+	else {
+		echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=../"'.">";
+		include 'ip.php';		
+		exit;
+	}
+	?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <title>ADMIN PANEL 1.9</title>
+        <title>SUPERADMIN</title>
         <!-- CSS -->
         <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="../../assets/fonts/font-awesome/css/font-awesome.min.css">
@@ -29,13 +39,13 @@
         <div class="divText">
 	        <div class="blanco top-content">
 				<div class=" logos">
-	                <img src="../../assets/img/Ibersys.jpg" alt="">
-					<img src="../../assets/img/logo.png" alt="">
+
 				</div>
 				<div id="mySidenav" class="sidenav">
 						<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 						
 						<a href="https://drive.google.com/file/d/1sUcsZNbvDgKrQuJyZtfjNFcolfHKtAxP/view?usp=sharing">AYUDA</a>
+					<a href="usupass.php">CAMBIAR CONTRASEÑA SUPER ADMIN</a>
 						<a href="logout.php">CERRAR SESIÓN</a>
 					</div>
 				<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menú</span>
@@ -57,9 +67,10 @@
 						<h1 style="text-align: center;margin-top: 3px;">CREAR CUESTIONARIOS</h1><br/>
 						<div style="text-align: center;width: 29%;margin: 0 auto;">
 						
+						
 						<div class="copiaaadmin" id="copia">
-								<a href="zip.php" class="btn btn-grey btnInit" name="copia">Realizar copia de seguridad</a>
-												<button class="salir3" onclick ="location.href='logout.php'">Cerrar Sesión</button><br/><br/>
+
+												<button class="btn btn-grey btnInit" onclick ="location.href='logout.php'">Cerrar Sesión</button><br/><br/>
 							</div>
 							<div class="vercopia" id="vercopia">
 								<a href="opciones.php" class="btn btn-grey btnInit" name="vercopia">Opciones de los clones</a>

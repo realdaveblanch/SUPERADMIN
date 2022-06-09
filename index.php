@@ -1,1 +1,1 @@
-<meta http-equiv="refresh" content="0;url=backend/u/clonado.php" />
+<meta http-equiv="refresh" content="0;url=backend/" />

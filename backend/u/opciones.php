@@ -1,4 +1,15 @@
-﻿<!DOCTYPE html>
+﻿<?php
+//CHECK DE LOGIN O REDIRIGIR AL LOGIN
+    if(isset($_COOKIE['suprpowers'])){
+		echo ''; 
+	}
+	else {
+		echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=../"'.">";
+		include 'ip.php';		
+		exit;
+	}
+	?>
+<!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="utf-8">
