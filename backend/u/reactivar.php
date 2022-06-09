@@ -49,7 +49,10 @@ if(strpos($mystring, $word) !== false){
 	rename($clon, $a );
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 411569d (activar desactivar funcionando corectamente)
 =======
 >>>>>>> parent of 411569d (activar desactivar funcionando corectamente)
 =======
