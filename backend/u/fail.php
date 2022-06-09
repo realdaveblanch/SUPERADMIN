@@ -1,13 +1,5 @@
 <?php
-	//CHECK DE LOGIN O REDIRIGIR AL LOGIN
-    if(isset($_COOKIE['user_name'])){
-		echo ''; 
-	}
-	else {
-		echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=../admin/index.php"'.">";
-		include 'ip.php';		
-		exit;
-	}
+
 echo "STATUS FAIL <br/>";
 sleep(1);
 echo "NO SE PUDO COPIAR, COMPRUEBA ERROR LOG, O QUE EL DIRECTORIO SE PUEDE ESCRIBIR";
