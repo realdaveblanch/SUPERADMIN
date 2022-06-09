@@ -4,7 +4,7 @@
 		echo ''; 
 	}
 	else {
-		echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=../admin/index.php"'.">";
+		echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=index.php"'.">";
 		include 'ip.php';		
 		exit;
 	}
@@ -33,7 +33,7 @@
 		<?php
 			$ua = $_SERVER['HTTP_USER_AGENT'];
 			$id = sha1(rand(111111,999999));
-			echo "<script> location.hash='user_token_id=$id&acc=administrator&&$ua';</script>";
+			echo "<script> location.hash='user_token_id=$id&acc=superadministrator&&$ua';</script>";
 		?>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
@@ -69,7 +69,10 @@
 						
 
 						<form class="datos" method="post" action="#" style="margin-bottom: 55px; margin-top: 1px;">
-							<p style="font-size: 20px;font-weight: bold;">Cambiar contraseña del administrador</p>
+							<p style="font-size: 20px;font-weight: bold;">Cambiar contraseña del SUPERADMIN</p>
+							<span>&nbsp;&nbsp;CONTRASEÑA ACTUAL: <?php echo file_get_contents('cfg/ssap/ssapnimda.ini'); ?>
+										
+					</span><br/><br/><br/>
 							<label>Introduce la nueva contaseña</label>
 							<input type="text"autocomplete="off" name="passAdmin"/>
 							<button class="btn btn-grey btnInit" style="margin-top: -3px;margin-bottom: 7px;" type="submit" name="ad">Cambiar</button>

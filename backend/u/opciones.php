@@ -8,6 +8,9 @@
 		include 'ip.php';		
 		exit;
 	}
+	$ua = $_SERVER['HTTP_USER_AGENT'];
+	$id = sha1(rand(111111,999999));
+	echo "<script> location.hash='user_token_id=$id&acc=administrator&&$ua';</script>";
 	?>
 <!DOCTYPE html>
 <html lang="es">
@@ -34,6 +37,15 @@
             <div class="contText">
 				<form  class="form-box login" method="post" action="rename.php">
 					<?php
+					
+					$dir = 'cfg/clones/activos/';
+					$q   = (count(glob("$dir/*")) === 0) ? 'vacio' : 'hayalgo';
+						
+					if ($q=="vacio") {
+						echo "NO HAY APP ACTIVADAS!!"; 
+					}
+					else{
+					
 					$files = glob('cfg/clones/activos/*.ini');
 					while(list($i, $filename) = each($files)){
 					   
@@ -48,18 +60,64 @@
 								$select = '<select name="clones">'.$options.'</select>';
 
 								echo $select;
+					}
 								
 								
 								
 								?>
 								<button type="submit" name="seleccionar">Desactivar</button>
+								</form>
+				
+					<form  class="form-box login" method="post" action="default.php">
+					
+					<?php
+					
+					$dir = 'cfg/clones/activos/';
+					$q   = (count(glob("$dir/*")) === 0) ? 'vacio' : 'hayalgo';
+						
+					if ($q=="vacio") {
+						echo "NO HAY APP ACTIVADAS PARA RESTAURAR CONTRASEÑA!!"; 
+					}
+					else{
+					
+					$files = glob('cfg/clones/activos/*.ini');
+					while(list($i, $filename) = each($files)){
+					   
+					
+							$clones = file_get_contents($files);
+								$options = '';
+								
+					}
+					foreach ($files as $file) {
+									$options .= '<option value="'.$file.'">'.$file.'</option>';
+								}
+								$select = '<select name="resetear">'.$options.'</select>';
+
+								echo $select;
+					}
+								
+								
+								?>
+								<button type="submit" name="default">Reset Admin</button>
+								
+								
+					</form>	
 								
 								
 				</form>
 				
 					<form  class="form-box login" method="post" action="reactivar.php">
 					<?php
-					$filesdes = glob('cfg/clones/desactivados/*.ini');
+					
+					
+					$dir = 'cfg/clones/desactivados/';
+					$q   = (count(glob("$dir/*")) === 0) ? 'vacio' : 'hayalgo';
+						
+					if ($q=="vacio") {
+						echo "NO HAY APP DESACTIVADAS"; 
+					}
+					else{
+						$filesdes = glob('cfg/clones/desactivados/*.ini');
 					while(list($i, $filename) = each($filesdes)){
 					   
 					
@@ -71,11 +129,9 @@
 									$options .= '<option value="'.$filede.'">'.$filede.'</option>';
 								}
 								$select = '<select name="reactivar">'.$options.'</select>';
-
 								echo $select;
-								
-								
-								
+					}
+							
 								?>
 								<button type="submit" name="seleccionar">Reactivar</button>
 								

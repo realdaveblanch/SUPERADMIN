@@ -1,1 +1,2 @@
 La IP 127.0.0.1 intentó acceder al admin en 2022-06-09 13:38:08
+La IP ::1 intentó acceder al admin en 2022-06-09 17:13:40
