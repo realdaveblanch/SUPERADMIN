@@ -5,6 +5,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 $clon = $_POST['reactivar'];	
 
+
+<<<<<<< HEAD
+
+
+
+
 	
 	$key = $a;
 $contents = '';
@@ -21,15 +27,19 @@ fclose($f);
 unlink("cfg/urlunactive.ini");
 rename("in_temp2.txt", "cfg/urlunactive.ini");
 
-$word = ".0";
+$word = "_old";
 $mystring = $clon;
 if(strpos($mystring, $word) !== false){
-	$a = substr($clon, 0, -2);
+	$a = substr($clon, 0, -4);
 	
 if (rename($clon, $a)) {
-	echo "OK";
+	$message = sprintf(
+		'The file %s was renamed to %s successfully!'		
+	);
 } else {
-	echo "FAIL";
+	$message = sprintf(
+		'There was an error renaming file %s'
+	);
 }
 
   
@@ -47,9 +57,6 @@ if(strpos($mystring, $word) !== false){
 	$a = substr($clon, 0, -4);
 	echo $a;
 	rename($clon, $a );
-<<<<<<< HEAD
-
-=======
 >>>>>>> parent of 411569d (activar desactivar funcionando corectamente)
 } else{
     echo "No está inactivo!";
