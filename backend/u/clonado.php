@@ -1,13 +1,4 @@
-<?php
-	//CHECK DE LOGIN O REDIRIGIR AL LOGIN
-    if(isset($_COOKIE['user_name'])) {
-		echo ''; 
-	}
-	else {
-		echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=../index.php"'.">";	
-		exit;
-	}
-?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -70,8 +61,9 @@
 								<a href="zip.php" class="btn btn-grey btnInit" name="copia">Realizar copia de seguridad</a>
 							</div>
 							<div class="vercopia" id="vercopia">
-								<a href="../../../backupWEBAPP" class="btn btn-grey btnInit" name="vercopia">Ver copias de seguridad</a>
+								<a href="opciones.php" class="btn btn-grey btnInit" name="vercopia">Opciones de los clones</a>
 							</div>
+							
 						
 						<div class="resultadosdir">
 							<label style="margin-top: 15px;">CUESTIONARIOS CREADOS ACTUALMENTE:</label><br>

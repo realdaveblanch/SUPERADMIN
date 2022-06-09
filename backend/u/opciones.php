@@ -17,7 +17,7 @@
         <div class="divText">
         <div class="blanco top-content">
 			<div class=" logos">
-                <a href="index.php" class="btn btn-grey btnInit">Atrás</a>
+                <a href="clonado.php" class="btn btn-grey btnInit">Atrás</a>
 
 			</div>
             <div class="contText">
