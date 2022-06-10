@@ -103,7 +103,7 @@
 												//Si el fichero no existe entra en el if
 												if (!is_file($fichero)) {
 													//Pinta por pantalla las urls con las ids
-													echo "<div><a href = '". trim($url.$id) ."'>". trim($url . $id) ."</a></div>";
+													echo "<div><a href = '". trim($url.$id) ."' target=" . '"' . "_blank" . '"'. ">". trim($url . $id) ."</a></div>";
 													echo "<br/>";
 													$cont++;
 												}				
