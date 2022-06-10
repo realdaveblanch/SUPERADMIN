@@ -67,6 +67,47 @@ error_reporting(0);
 								?>
 								<button type="submit" name="seleccionar">Desactivar</button>
 								</form>
+								
+					</form>	
+											
+					<form  class="form-box login" method="post" action="cambiarnombre.php">
+					<?php					
+					//Se declara el directorio en el que se va a buscar .ini
+					$dir = 'cfg/clones/activos/';
+					//Se cuenta el directorio con variable global
+					$q   = (count(glob("$dir/*")) === 0) ? 'vacio' : 'hayalgo';
+						
+					if ($q=="vacio") {
+					//Si está vacío se muestra este mensaje	
+						echo "NO HAY APP ACTIVAS PARA RENOMBRAR"; 
+					}
+					else{
+					//Se cuentan los ini que hay	
+						$filesdes = glob('cfg/clones/desactivados/*.ini');
+					while(list($i, $filename) = each($filesdes)){
+							$clones = file_get_contents($filesdes);
+								$options = '';								
+					}
+					//Por cada .ini se muestra un select
+					foreach ($filesdes as $filede) {
+									$options .= '<option value="'.$filede.'">'.$filede.'</option>';
+								}
+								$select = '<select name="renombrar">'.$options.'</select>';
+								echo $select;
+					}
+											//CODE BY
+								//https://github.com/realdaveblanch
+								//https://github.com/X-aaron-X
+
+								?>
+							<label>Introduce el nuevo nombre.</label>
+							<input type="text" autocomplete="off" name="nombrenuevo"/>
+							
+						
+								<button type="submit" name="seleccionar">Renombrar</button>
+								
+								
+				</form>				
 				
 					<form  class="form-box login" method="post" action="default.php">
 					
