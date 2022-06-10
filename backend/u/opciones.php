@@ -1,5 +1,6 @@
 ﻿<?php
 //CHECK DE LOGIN O REDIRIGIR AL LOGIN
+error_reporting(0);
     if(isset($_COOKIE['suprpowers'])){
 		echo ''; 
 	}
