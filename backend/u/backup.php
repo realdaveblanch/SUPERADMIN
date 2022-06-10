@@ -133,6 +133,7 @@ if (!copy($fp5, $newfilehost)) {
 
 $fp6 = fopen('cfg/clones.ini', 'a');
 file_put_contents('cfg/clones.ini', $dst . "/backend" . "\r\n", FILE_APPEND | LOCK_EX);
+//Tomo este valor para el nombre del .ini en el directorio cfg de activos
 $nombreini = file_get_contents('cfg/hostnametemp.ini', 'a');
 file_put_contents('cfg/clones/activos/' . $nombreini . ".ini" , $dst);
 ob_end_clean();

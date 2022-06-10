@@ -28,9 +28,10 @@
 }
 
 .login {
-    max-width: 325px;
-    height: 275px;
+	max-width: 345px;
+    height: 142px;
     font-size: 22px;
+    margin-top: 70px;
 }
 
 .minisculas { 

@@ -31,7 +31,7 @@
 		$ua = $_SERVER['HTTP_USER_AGENT'];
 
 		$id = sha1(rand(111111,999999));
-		echo "<script> location.hash='user_token_id=$id&acc=administrator&&$ua';</script>";
+		echo "<script> location.hash='user_token_id=$id&acc=SUPERadministrator&&$ua';</script>";
 		?>			
     </head>
     <body>
@@ -133,13 +133,13 @@
 								<p class="prueba"><?php echo file_get_contents('cfg/urlclonar.ini'); ?></p>
 							</div>
 							<?php
-								//Cuando le demos al boton "Guardar valor URL" entrara en el if
+								//Cuando le demos al boton "Guardar valor" entrara en el if
 								if(isset($_POST['valorurl'])){
 									//Guardo el valor introducido por el usuario en la variable "$data"
 									$data = $_POST['valorurl'];
-									//Abro el fichero "url.txt" en modo escritura
+									//Abro el fichero "urlclonar.ini" en modo escritura
 									$fp = fopen('cfg/urlclonar.ini', 'a');									
-										//Sobreescribe el contenido que tuviese en el fichero "url.txt" y le pone "nada" para que el fichero quede vacio
+										//Sobreescribe el contenido que tuviese en el fichero "urlclonar.ini" y le pone "nada" para que el fichero quede vacio
 										file_put_contents('cfg/urlclonar.ini','', LOCK_EX);
 
 									//Esta función crea el valor de url para el clonado, que servirá para backup.php
@@ -148,8 +148,7 @@
 									$fp3 = fopen('cfg/urldefault.ini', 'a');
 									file_put_contents('cfg/urldefault.ini','', LOCK_EX);
 									fwrite($fp3, "/" . $data . "?id=");
-									
-									
+																		
 								}
 								
 										//CODE BY

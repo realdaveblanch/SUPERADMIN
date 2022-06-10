@@ -4,7 +4,7 @@ echo "STATUS OK <br/>";
 sleep(1);
 echo "EJECUTADO SATISFACTORIAMENTE";
 
-	echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"3;URL=clonado.php"'.">";		
+	echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"1;URL=clonado.php"'.">";		
 						
 						
 								$ua = $_SERVER['HTTP_USER_AGENT'];

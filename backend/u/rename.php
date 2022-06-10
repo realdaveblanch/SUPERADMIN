@@ -18,22 +18,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 		$clon = $_POST['clones'];
 
 		$interno = file_get_contents($clon);
-
-
-
-
+//Se cambia el nombre de la ruta que contenga $clon ($interno) a _old
 rename($interno, $interno . "_old" );
-
-
-function move_file($file, $to){
-    $path_parts = pathinfo($file);
-    $newplace   = "$to/{$path_parts['basename']}";
-    if(rename($file, $newplace))
-        return $newplace;
+//Se declara funcion mover ini	
+	function mover_ini($archivoini, $destino){
+    $partesderuta = pathinfo($archivoini);
+    $nuevodestino   = "$destino/{$partesderuta['basename']}";
+    if(rename($archivoini, $nuevodestino))
+        return $nuevodestino;
     return null;
 }
-$destino = 'cfg/clones/desactivados';
-move_file($clon, $destino);
+$destinofinal = 'cfg/clones/desactivados';
+move_file($clon, $destinofinal);
 	
 //Hay que buscar line en select y eliminar
 echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=opciones.php"'.">";

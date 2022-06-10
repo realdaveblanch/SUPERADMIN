@@ -14,4 +14,8 @@ unset($_COOKIE['suprpowers']);
 unset($_COOKIE['lastVisit']);  
 session_destroy(); 
 header('Location:' . '../index.php'); 
+											//CODE BY
+								//https://github.com/realdaveblanch
+								//https://github.com/X-aaron-X
+
 ?>

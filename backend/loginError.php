@@ -16,7 +16,6 @@
         <div class="divText">
         <div class="blanco top-content">
 			<div class=" logos">
-                <img src="../assets/img/Ibersys.jpg" alt="">
 
 
 			</div>		

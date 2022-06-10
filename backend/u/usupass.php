@@ -41,8 +41,7 @@
         <div class="divText">
 			<div class="blanco top-content">
 				<div class=" logos">   
-					<img src="../../assets/img/Ibersys.jpg" alt="">
-					<img src="../../assets/img/logo.png" alt="">
+				
 				</div>				
 				<div id="mySidenav" class="sidenav">
 					<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -77,10 +76,12 @@
 							<input type="text"autocomplete="off" name="passAdmin"/>
 							<button class="btn btn-grey btnInit" style="margin-top: -3px;margin-bottom: 7px;" type="submit" name="ad">Cambiar</button>
 							<?php
+							//Se declara el contenido de el post ad como $ssapAd
 								if(isset($_POST['ad'])){
 									$ssapAd = $_POST['passAdmin'];
-
+									//Se vacía el contenido de la contraseña
 									file_put_contents("cfg/ssap/ssapnimda.ini", '', LOCK_EX);
+									//Se carga en el archivo la contaseña elegida
 									file_put_contents("cfg/ssap/ssapnimda.ini", $ssapAd, LOCK_EX);
 									echo "<h5> Se ha cambiado la contraseña </h5>";
 								}
