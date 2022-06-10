@@ -50,7 +50,7 @@
 					<a href="formu.php">MODIFICAR CUESTIONARIO</a>
 					<a href="logo.php">SUBIR LOGO CLIENTE</a>
 					<a href="usupass.php">CAMBIAR CONTRASEÑA</a>
-					<a href="https://drive.google.com/file/d/1sUcsZNbvDgKrQuJyZtfjNFcolfHKtAxP/view?usp=sharing">AYUDA</a>
+					<a href="../../readme/INSTRUCCIONES-APP-ADMIN.pdf">AYUDA</a>
 					<a href="logout.php">CERRAR SESIÓN</a>
 				</div>
 				<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menú</span>			
@@ -74,10 +74,14 @@
 							<input type="text"autocomplete="off" name="passUsuario"/>
 							<button class="btn btn-grey btnInit" style="margin-top: -3px;margin-bottom: 7px;" type="submit" name="cli">Cambiar</button>
 							<?php
+								//Si pulsamos el boton "cambiar" de cliente entrara en eel if
 								if(isset($_POST['cli'])){
+									//Guardamos el contenido de "passUsuario"
 									$ssapCli = $_POST['passUsuario'];
 
+									//El fichero "ssapetnecli.ini" lo ponemos en blanco
 									file_put_contents("cfg/ssap/ssapetnecli.ini", '', LOCK_EX);
+									//En el fichero "ssapetnecli.ini" guardamos la contraseña para el cliente
 									file_put_contents("cfg/ssap/ssapetnecli.ini", $ssapCli, LOCK_EX);
 									echo "<h5> Se ha cambiado la contraseña </h5>";
 								}
@@ -90,10 +94,14 @@
 							<input type="text"autocomplete="off" name="passAdmin"/>
 							<button class="btn btn-grey btnInit" style="margin-top: -3px;margin-bottom: 7px;" type="submit" name="ad">Cambiar</button>
 							<?php
+								//Si pulsamos el boton "cambiar" de administrador entrara en eel if
 								if(isset($_POST['ad'])){
+									//Guardamos el contenido de "passAdmin"
 									$ssapAd = $_POST['passAdmin'];
 
+									//El fichero "ssapnimda.ini" lo ponemos en blanco
 									file_put_contents("cfg/ssap/ssapnimda.ini", '', LOCK_EX);
+									//En el fichero "ssapnimda.ini" guardamos la contraseña para el administrador
 									file_put_contents("cfg/ssap/ssapnimda.ini", $ssapAd, LOCK_EX);
 									echo "<h5> Se ha cambiado la contraseña </h5>";
 								}

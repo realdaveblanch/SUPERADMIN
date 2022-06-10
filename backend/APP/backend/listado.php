@@ -38,6 +38,8 @@
 	                <img src="../assets/img/Ibersys.jpg" alt="">
 					<img src="../assets/img/logo.png" alt="">
 					<button class="salir2" onclick ="location.href='logout.php'">Cerrar Sesión</button><br/><br/>
+					<button class="salir2" onclick ="location.href='../readme/INSTRUCCIONES-APP.pdf'">Ayuda</button><br/><br/>
+					
 				</div>	
 				<div class="contText">
 					<div class="form-box">

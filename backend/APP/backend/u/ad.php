@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 	//CHECK DE LOGIN O REDIRIGIR AL LOGIN
     if(isset($_COOKIE['user_name'])){
 		echo ''; 
@@ -50,7 +50,7 @@
 					<a href="formu.php">MODIFICAR CUESTIONARIO</a>
 					<a href="logo.php">SUBIR LOGO CLIENTE</a>
 					<a href="usupass.php">CAMBIAR CONTRASEÑA</a>
-					<a href="https://drive.google.com/file/d/1sUcsZNbvDgKrQuJyZtfjNFcolfHKtAxP/view?usp=sharing">AYUDA</a>
+					<a href="../../readme/INSTRUCCIONES-APP-ADMIN.pdf">AYUDA</a>
 					<a href="logout.php">CERRAR SESIÓN</a>
 				</div>
 				<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menú</span>			
@@ -59,7 +59,7 @@
 								<div class="rectangle">
 									<div class="notification-text">
 										<i class="material-icons" style="font-size: 45px;">info</i>
-										<span style="margin-left: 22px;">Panel de <?php echo file_get_contents('cfg/hostname.ini'); ?><br/><br/>
+										<span style="margin-left: 22px;">Panel de <?php echo file_get_contents('cfg/hostname.ini'); ?><br/>
 											<?php
 											//php del ultimo acceso							
 												if(isset($_COOKIE['lastVisit'])){
@@ -78,27 +78,29 @@
 				<! -- PORCENTAJES -->
 				<div id="estados" style="width: 304px;margin: 0 auto;">
 					<?php
-						//Guardo la ruta completa de este fichero
-						$ruta = __FILE__;
-						echo $ruta . "<br>";
+						//Guardo la ruta completa de este fichero y le doy la vuelta al string
+						$ruta = strrev(__FILE__);
+						//echo $ruta . "<br>";
 
 						//Pongo la "$ruta" en minusculas por si la carpeta esta en mayusculas
-						//Coge la "$ruta" y empieza a contar desde el caracter 19 --> el numero "19" dependera desde donde se esta ejecutando la aplicacion
-						//Quito los caracteres especias para que se quede limpio
-						$limpiandoRuta = strtolower(substr(preg_replace('/[^a-zA-Z0-9_ %\[\]\.\(\)%&-]/s', ",", $ruta), 19));
-						echo $limpiandoRuta . "<br>";
+						//Coge el string de "$ruta" y empieza a pintar desde el caracter 17
+						//Quito con expresiones regulares el caracter "/"
+						$limpiandoRuta = strtolower(substr(preg_replace('/[^a-zA-Z0-9_ %\[\]\.\(\)%&-]/s', ",", $ruta), 17));
+						//echo $limpiandoRuta . "<br>";
 
-						//Lo convierto en array y que los separe por las comas ","
+						//Lo convierto en array y cada string los separo por una coma ","
 						$rutaLimpia = explode(",", $limpiandoRuta);
-						echo $rutaLimpia[0];
+						//echo strrev($rutaLimpia[0]) . "<br>";
 
 						//Cogemos el contenido de "url.in" y pasamos todo a minusculas
 						$limpiandoUrl = strtolower(substr(file_get_contents('cfg/url.ini'), 1));
 						//Quitamos todo lo que este a la derecha de "?"
 						$urlLimpia = strstr($limpiandoUrl, "?", true);
+						//echo $urlLimpia;
 						
 						//Si "$rutaLimpia[0]" es distinto que "$urlLimpia"
-						if ($rutaLimpia[0] !== $urlLimpia) {
+						//A "$rutaLimpia[0]" le doy la vuelta a su contenido
+						if (strrev($rutaLimpia[0]) !== $urlLimpia) {
 							?>
 								<div class="resetear" style="margin-left: 59px; margin-bottom: -20px;">
 									<i class="material-icons" style="color: #a64c4c; font-size: 53px;">warning</i>
@@ -107,10 +109,16 @@
 							<?php
 						}
 
-						if (!is_file("../validos.php")) {
-							echo "";
+						if (!file_exists("../../res")){
+							?>
+								<div class="resetear" style="margin-left: 20px; margin-bottom: -20px;">
+									<i class="material-icons" style="color: #a64c4c; font-size: 53px;">warning</i>
+									<span>ACTIVA LOS CUESTIONARIOS</span>
+								</div>	
+							<?php
 						}
-						else{
+
+						if (is_file("../validos.php")) {
 							//Cargamos los datos del archivo "valido.php" con permisos de lectura
 							$idsValidos = fopen("../validos.php", "r");
 								//Miestras el puntero del archivo "valido.php" no este al final entra en el while
@@ -133,6 +141,7 @@
 										}	
 								}
 							fclose($idsValidos);
+
 							$maxLinks = $cont2-1;
 							
 							//pre resultados para lastcuest

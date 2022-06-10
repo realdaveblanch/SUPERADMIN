@@ -40,9 +40,9 @@
 					file_put_contents("preguntas/preguntasActivas.ini", '', LOCK_EX);
 					clearstatcache();
 
-					//Cuando "$i" es menor que 11 entrara en el if y repetira lo de dentro 10 veces
-					//Si añadimos mas preguntas en "formu.php" tendremos que modificar el numero "11"
-					for ($i=1; $i < 11 ; $i++) {
+					//Cuando "$i" es menor que 16 entrara en el if y repetira el interior 15 veces
+					//Si añadimos mas preguntas en "formu.php" tendremos que modificar el numero "16"
+					for ($i=1; $i < 16 ; $i++) {
 						//Limpiamos el contenido de "pregunta?.ini"
 						file_put_contents("preguntas/pregunta$i.ini", '', LOCK_EX);
 						//Limpiamos el contenido de "pregunta?.json"

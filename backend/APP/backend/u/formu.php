@@ -47,7 +47,7 @@
 						<a href="formu.php">MODIFICAR CUESTIONARIO</a>
 						<a href="logo.php">SUBIR LOGO CLIENTE</a>
 						<a href="usupass.php">CAMBIAR CONTRASEÑA</a>
-						<a href="https://drive.google.com/file/d/1sUcsZNbvDgKrQuJyZtfjNFcolfHKtAxP/view?usp=sharing">AYUDA</a>
+						<a href="../../readme/INSTRUCCIONES-APP-ADMIN.pdf">AYUDA</a>
 						<a href="logout.php">CERRAR SESIÓN</a>
 					</div>
 				<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menú</span>
