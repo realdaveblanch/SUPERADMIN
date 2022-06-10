@@ -29,7 +29,7 @@ rename($interno, $interno . "_old" );
     return null;
 }
 $destinofinal = 'cfg/clones/desactivados';
-move_file($clon, $destinofinal);
+mover_ini($clon, $destinofinal);
 	
 //Hay que buscar line en select y eliminar
 echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=opciones.php"'.">";
