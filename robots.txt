@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /backend/
+Disallow: /assets/
+Disallow: /readme/
+Disallow: /*.ini$
+Disallow: /*.php$
+Disallow: /*.html$
