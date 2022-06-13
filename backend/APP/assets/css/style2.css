@@ -17,6 +17,15 @@
   border-radius: 6px;
 }
 
+.ayuda2{
+  float: right;
+  width: 70px;
+  height: 34px;
+  background-color: #00a59f;
+  color: white;
+  border-radius: 6px;
+  box-shadow: 1px -1px 1px gray;
+}
 .salir3{
   margin-top: 120px;
   width: 107px;
@@ -64,7 +73,7 @@
 	margin: 0 auto;
 	background-color: #c1d72f;
 	font-weight: bold;
-	box-shadow: 1px -2px 9px gray;
+	box-shadow: 1px -1px 9px gray;
 	padding: 7px;
 	text-align: center;
 	border-radius: 4px;

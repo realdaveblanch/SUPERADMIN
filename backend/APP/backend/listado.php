@@ -38,11 +38,10 @@
 	                <img src="../assets/img/Ibersys.jpg" alt="">
 					<img src="../assets/img/logo.png" alt="">
 					<button class="salir2" onclick ="location.href='logout.php'">Cerrar Sesión</button><br/><br/>
-					<button class="salir2" onclick ="location.href='../readme/INSTRUCCIONES-APP.pdf'">Ayuda</button><br/><br/>
-					
 				</div>	
 				<div class="contText">
 					<div class="form-box">
+						<button class="ayuda2" onclick ="location.href='../readme/INSTRUCCIONES-APP.pdf'">Ayuda</button>
 						<?php
 							include 'url.php';
 							echo "<h1>LISTA DE LINK VALIDOS</h1>";
@@ -55,11 +54,14 @@
 						<!-- código ajax descargar resultados -->
 						<br/><br/>
 						<div class="resultados" id="demo1">
+						
 							<button type="button" class="btn btn-grey btnInit" onclick="loadDoc1(); location.href='descomentarios.php'">Descargar Comentarios</button>
+							
 						</div>					
 						<div class="verrespaldo" id="dem">
 							<!-- <a href="respaldo/" class="btn btn-grey btnInit" >Ver respaldos</a> -->
 						</div>
+						
 						<!-- FIN código ajax descargar resultados -->
 							<?php
 								$cont=0;

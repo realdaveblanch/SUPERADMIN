@@ -5,7 +5,7 @@
 
 	//CHECK QUE SE LE HA ASIGNADO UNA COOKIE EN INDEX.PHP
   if(isset($_COOKIE['cuestionario'])){
-		echo ''; 
+		//echo ''; 
 	}
 	else {
 		//SI NO TIENE UNA COOKIE ASIGNADA, LE MANDA A GRACIAS.PHP
@@ -44,7 +44,7 @@
           <div class="coment">
             <textarea name="comentarios" rows="10" style="margin-left: 11%;" placeholder="Introduzca aquí su comentario. Dispone de 3500 caracteres"></textarea><br/><br/>
           </div>
-          <input type="submit" name="submit" value="Finalizar Test" class="finalizar btn btn-grey btnInit" style="color: white;"><br/><br/>
+          <input type="submit" name="submit" value="Finalizar" class="finalizar btn btn-grey btnInit" style="color: white;"><br/><br/>
           <?php
             //Cuando le demos al boton "Finalizar Test" entrara en el if
             if(isset($_POST['comentarios'])){
