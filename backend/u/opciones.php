@@ -174,6 +174,41 @@ error_reporting(0);
 								
 								
 				</form>		
+				
+				<form  class="form-box login" method="post" action="eliminar.php">
+					<?php					
+					//Se declara el directorio en el que se va a buscar .ini
+					$dir = 'cfg/clones/desactivados/';
+					//Se cuenta el directorio con variable global
+					$q   = (count(glob("$dir/*")) === 0) ? 'vacio' : 'hayalgo';
+						
+					if ($q=="vacio") {
+					//Si está vacío se muestra este mensaje	
+						echo "NO HAY APP DESACTIVADAS"; 
+					}
+					else{
+					//Se cuentan los ini que hay	
+						$filesdes = glob('cfg/clones/desactivados/*.ini');
+					while(list($i, $filename) = each($filesdes)){
+							$clones = file_get_contents($filesdes);
+								$options = '';								
+					}
+					//Por cada .ini se muestra un select
+					foreach ($filesdes as $filede) {
+									$options .= '<option value="'.$filede.'">'.$filede.'</option>';
+								}
+								$select = '<select name="BORRAR">'.$options.'</select>';
+								echo $select;
+					}
+											//CODE BY
+								//https://github.com/realdaveblanch
+								//https://github.com/X-aaron-X
+
+								?>
+								<button type="submit" name="seleccionar">BORRAR</button>
+								
+								
+				</form>		
 								
 								
 				

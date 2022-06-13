@@ -78,51 +78,37 @@
 							
 						
 						<div class="resultadosdir">
-							<label style="margin-top: 15px;">CUESTIONARIOS CREADOS ACTUALMENTE:</label><br>
+							<label style="margin-top: 15px;">CUESTIONARIOS ACTIVOS ACTUALMENTE:</label><br>
 							
 							<?php
-							if (!is_file("cfg/clones.ini")) {
-								echo "<h3>No hay clones actualmente.</h3>";
-							}
-							else{
-								echo '<div class="disponibles2" id="disponibles">'; 
-									//Cargamos los datos del archivo "valido.php" con permisos de lectura
-									$idsValidos = fopen("cfg/clones.ini", "r");
-										//Miestras el puntero del archivo "valido.php" no este al final entra en el while
-										while(!feof($idsValidos)) {
-											$cont2++;
-											
-											//Guardo la primera linea del archivo "valido.php" y la guardo en la variable $id
-											$id = fgets($idsValidos);
-											//Guardo los 13 caracteres de $id
-											$treceCaracteres = substr($id,0,6);
-											
-											//Si la $id es distinta que "" entrara en el si
-											if($id != ""){	
-												$fichero = "cfg/$seisCaracteres.ini";
-												//Si el fichero no existe entra en el if
-												if (!is_file($fichero)) {
-													//Pinta por pantalla las urls con las ids
-													echo "<div><a href = '". trim($url.$id) ."' target=" . '"' . "_blank" . '"'. ">". trim($url . $id) ."</a></div>";
-													echo "<br/>";
-													$cont++;
-												}				
-											}	
-										}
-									fclose($idsValidos);
-									
-									$maxLinks = $cont2-1;
-									//pre resultados para lastcuest
-									$totalhechos = ($maxLinks - $cont);
-									echo "<div class=" . '"' . "numCuestadmin" . '"'. ">";
-									//echo "<h4>Cuestionarios disponibles " . $cont. ' de '. $maxLinks ."</h4>";
-									//echo "<div>";
-									//echo "</div>";
-							}
-							//CODE BY
-							//https://github.com/realdaveblanch
-							//https://github.com/X-aaron-X
-						?>
+					//Se declara el directorio en el que se va a buscar .ini
+					$dir = 'cfg/clones/activos/';
+					//Se cuenta el directorio con variable global
+					$q   = (count(glob("$dir/*")) === 0) ? 'vacio' : 'hayalgo';
+					//Si está vacío se muestra este mensaje	
+					if ($q=="vacio") {
+						echo "NO HAY APP ACTIVAS!!"; 
+					}
+					//Si hay .ini se ejecuta el resto del código
+					else{
+					//Se cuentan los ini que hay
+					$files = glob('cfg/clones/activos/*.ini');
+					while(list($i, $filename) = each($files)){   
+								$options = '';							
+					}
+					//Por cada .ini se muestra un select
+					foreach ($files as $file) {
+						$interno = file_get_contents($file);
+									$options .= '<a href="'.$interno.'">'.$file.'</a>'.'<br/>';
+								}
+								
+								
+								echo $options;
+					}
+								
+								
+								
+								?>
 							</div>
 						<form class="datos form3" method="post" action="#">
 							<label>Introduce el nombre de la nueva carpeta de destino, esta se creará automáticamente</label>

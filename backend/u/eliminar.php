@@ -15,21 +15,30 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
 		//Guardo el valor  "numIDs" introducido en el formulario "ad.php" y lo guardo en $numIDs
 		
-		$clon = $_POST['renombrar'];
+		$clon = $_POST['BORRAR'];
 
 		$interno = file_get_contents($clon);
 		
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
-		//Guardo el valor  "numIDs" introducido en el formulario "ad.php" y lo guardo en $numIDs
 		
-		$nuevoname = $_POST['nombrenuevo'];	
-		
-//Se cambia el nombre de la ruta que contenga $clon ($interno) a _old
-rename($interno, "../../../$nuevoname" );
+//Se elimina la ruta que contenga $clon ($interno)
+	
+
+	//La funcion borrara la carpeta res y todo su contenido
+	function removeFiles($target) {
+	    if(is_dir($target)){
+	        $files = glob( $target . '*', GLOB_MARK );
+	        foreach( $files as $file ){
+	            removeFiles( $file );      
+	        }
+	        rmdir( $target );
+	    } elseif(is_file($target)) {
+	        unlink( $target );  
+	    }
+	}
+removeFiles($interno . "_old");
+unlink($interno);
 unlink($clon);
-file_put_contents('cfg/clones/activos/' . $nuevoname . ".ini" , "../../../" . $nuevoname);
-file_put_contents('cfg/clones/panel/' . $nuevoname . ".ini" , "../../../" . $nuevoname);
-}
+
 
 	
 //Hay que buscar line en select y eliminar
