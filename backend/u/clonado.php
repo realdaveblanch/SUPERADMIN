@@ -44,7 +44,7 @@
 				<div id="mySidenav" class="sidenav">
 						<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 						
-						<a href="https://drive.google.com/file/d/1sUcsZNbvDgKrQuJyZtfjNFcolfHKtAxP/view?usp=sharing">AYUDA</a>
+						<a href="../../readme/INSTRUCCIONES-SUPERADMIN.pdf">AYUDA</a>
 					<a href="usupass.php">CAMBIAR CONTRASEÑA SUPER ADMIN</a>
 						<a href="logout.php">CERRAR SESIÓN</a>
 					</div>
