@@ -84,6 +84,12 @@ $number = $visitors_online;
 		
     }
     else{
+		
+echo "OK, nadie interactuando, DESACTIVANDO";
+flush();
+sleep(2);
+echo "<br/>";
+
 //Si el número es 0 se considera que no hay gente interactuando con los cuestionarios y por tanto se ejecuta la desactivación
 //Se cambia el nombre de la ruta que contenga $clon ($interno) a _old
 rename($interno, $interno . "_old" );
@@ -97,8 +103,7 @@ rename($interno, $interno . "_old" );
 }
 $destinofinal = 'cfg/clones/desactivados';
 mover_ini($clon, $destinofinal);
-	
-//Hay que buscar line en select y eliminar
+
 echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=opciones.php"'.">";
     }
 }			
