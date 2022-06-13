@@ -99,7 +99,7 @@
 					//Por cada .ini se muestra un select
 					foreach ($files as $file) {
 						$interno = file_get_contents($file);
-									$options .= '<a href="'.$interno.'">'.$file.'</a>'.'<br/>';
+									$options .= '<a href="'.$interno.'" target="_blank">'.$file.'</a>'.'<br/>';
 								}
 								
 								
