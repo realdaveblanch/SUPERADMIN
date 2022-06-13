@@ -35,11 +35,12 @@ error_reporting(0);
         <!-- Top content -->
         <div class="divText">
         <div class="blanco top-content">
+			
+            <div class="contText">
 			<div class=" logos">
                 <a href="clonado.php" class="btn btn-grey btnInit">Atrás</a>
 
 			</div>
-            <div class="contText">
 				<form  class="form-box login" method="post" action="rename.php">
 					<?php
 					//Se declara el directorio en el que se va a buscar .ini

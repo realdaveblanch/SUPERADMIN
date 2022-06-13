@@ -111,7 +111,7 @@
 								?>
 							</div>
 						<form class="datos form3" method="post" action="#">
-							<label>Introduce el nombre de la nueva carpeta de destino, esta se creará automáticamente</label>
+							<label>Introduce el nombre del nuevo cuestionario, este se creará automáticamente</label>
 							<input type="text" name="valorurl"><br/>
 							<button class="btn btn-grey btnInit g" type="submit">Guardar valor</button>
 							<div style="height: 117px;">
@@ -142,7 +142,7 @@
 								//https://github.com/X-aaron-X
 							?>
 							<div style="height: 117px;">
-								<label style="margin-top: 15px;">Nombre de la carpeta actual:</label>	
+								<label style="margin-top: 15px;">Ruta de los contenidos:</label>	
 								<p class="prueba"><?php echo file_get_contents('cfg/urlpura.ini'); ?></p>
 							</div>
 								
