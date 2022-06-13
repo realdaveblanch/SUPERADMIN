@@ -205,7 +205,27 @@ error_reporting(0);
 								//https://github.com/X-aaron-X
 
 								?>
-								<button type="submit" name="seleccionar">BORRAR</button>
+								<div class="resultadosadmin" id="resetear">
+								<button type="button" class="btn btn-grey btnInit rc" onclick="loadDoc()" style="color:white; background: #a64c4c; ">BORRAR</button>
+							</div>
+							<div class="resultados mo" id="demo1">
+							<! -- FIN Botones -->
+						</div>
+							<script>
+								/* código ajax descargar resultados */
+								function loadDoc() {
+									const xhttp = new XMLHttpRequest();
+									xhttp.onload = function() {
+										document.getElementById("resetear").innerHTML =
+										this.responseText;
+									}
+
+									xhttp.open("GET", "cfg/AJAX/BORRAR.ini");
+									xhttp.send();
+								}
+								/* FIN código ajax descargar resultados */
+							</script>
+								
 								
 								
 				</form>		
