@@ -25,6 +25,10 @@ error_reporting(0);
         <link rel="stylesheet" href="../../assets/css/style.css">
 		<link rel="stylesheet" href="../../assets/css/style2.css">
         <link rel="icon"  href="../../assets/img/favi.png">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+		<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+		<link rel="stylesheet" href="../../assets/css/banner.css">
+		<link rel="stylesheet" href="../../assets/css/bannerset.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">	
     </head>
     <body>
@@ -93,6 +97,7 @@ error_reporting(0);
 									$options .= '<option value="'.$filede.'">'.$filede.'</option>';
 								}
 								$select = '<select name="renombrar">'.$options.'</select>';
+								echo "INTRODUCE EL NUEVO NOMBRE"; 
 								echo $select;
 					}
 											//CODE BY
@@ -100,7 +105,7 @@ error_reporting(0);
 								//https://github.com/X-aaron-X
 
 								?>
-							<label>Introduce el nuevo nombre.</label>
+							
 							<input type="text" autocomplete="off" name="nombrenuevo"/>
 							
 						
@@ -136,7 +141,7 @@ error_reporting(0);
 								echo $select;
 					}								
 								?>
-								<button type="submit" name="default">Reset Admin</button>
+								<button type="submit" name="default" style="color:white; background: #a64c4c; ">Reset Contraseña</button>
 
 					</form>	
 											
@@ -170,7 +175,7 @@ error_reporting(0);
 								//https://github.com/X-aaron-X
 
 								?>
-								<button type="submit" name="seleccionar">Reactivar</button>
+								<button type="submit" name="seleccionar" style="color:white; background: #9aab1e; ">Reactivar</button>
 								
 								
 				</form>		
