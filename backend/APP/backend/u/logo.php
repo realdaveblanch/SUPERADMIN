@@ -79,7 +79,7 @@
       <meta http-Equiv="Expires" Content="0" />
       <meta charset="utf-8">
       <meta content="width=device-width, initial-scale=1" name="viewport" />
-      <title>ADMIN PANEL 1.9</title>
+      <title>ADMIN PANEL <?php echo file_get_contents('cfg/hostname.ini'); ?></title>
       <!-- CSS -->
       <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
       <link rel="stylesheet" href="../../assets/fonts/font-awesome/css/font-awesome.min.css">

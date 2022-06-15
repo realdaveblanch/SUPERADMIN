@@ -18,7 +18,19 @@ error_reporting(0);
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <title>SUPERADMIN</title>
+        
+		<script type='text/javascript'> 
+		title = " SUPERADMIN PANEL 1.0 ";
+		position = 0;
+		function scrolltitle() {
+			document.title = title.substring(position, title.length) + title.substring(0, position); 
+			position++;
+			if (position > title.length) position = 0;
+			titleScroll = window.setTimeout(scrolltitle,170);
+		}
+		scrolltitle();
+		</script>
+	
         <!-- CSS -->
         <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="../../assets/fonts/font-awesome/css/font-awesome.min.css">
@@ -34,13 +46,12 @@ error_reporting(0);
     <body>
         <!-- Top content -->
         <div class="divText">
-        <div class="blanco top-content">
-			
+        <div class="blanco top-content">			
             <div class="contText">
-			<div class=" logos">
+				<div class=" logos">
+					<img src="../../assets/img/logo.png" alt="">
+				</div>
                 <a href="clonado.php" class="btn btn-grey btnInit">Atrás</a>
-
-			</div>
 				<form  class="form-box login" method="post" action="rename.php">
 					<?php
 					//Se declara el directorio en el que se va a buscar .ini

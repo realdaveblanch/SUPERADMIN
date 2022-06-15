@@ -103,6 +103,7 @@
               //En el fichero "comentarios.ini" ponemos el resultados de "$count"
       				file_put_contents("backend/u/cfg/comentarios.ini", $count);
       			}
+				
           ?>
         </form>
       </div>

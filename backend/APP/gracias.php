@@ -43,7 +43,7 @@ session_destroy();
         <div class="contText">
             <div class="form-box ">
                 <div class="desp">
-                    Gracias por su colaboración, el cuestionario ha finalizado correctamente
+                    Gracias por su colaboración, el cuestionario ha finalizado correctamente.
                 </div>   
             </div>
         </div>

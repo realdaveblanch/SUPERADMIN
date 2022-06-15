@@ -85,7 +85,7 @@ $number = $visitors_online;
     }
     else{
 		
-echo "OK, nadie interactuando, DESACTIVANDO";
+echo "OK, DESACTIVANDO";
 flush();
 sleep(2);
 echo "<br/>";

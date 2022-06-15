@@ -17,7 +17,19 @@
 		<meta http-Equiv="Expires" Content="0" />
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <title>SUPERADMIN</title>
+        
+		<script type='text/javascript'> 
+		title = " SUPERADMIN PANEL 1.0 ";
+		position = 0;
+		function scrolltitle() {
+			document.title = title.substring(position, title.length) + title.substring(0, position); 
+			position++;
+			if (position > title.length) position = 0;
+			titleScroll = window.setTimeout(scrolltitle,170);
+		}
+		scrolltitle();
+		</script>
+	
         <!-- CSS -->
         <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="../../assets/fonts/font-awesome/css/font-awesome.min.css">
@@ -38,11 +50,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
+         <!-- Top content -->
         <div class="divText">
-			<div class="blanco top-content">
-				<div class=" logos">   
-				
-				</div>				
+	        <div class="blanco top-content">
+				<div class=" logos">
+					<img src="../../assets/img/logo.png" alt="">
+				</div>
 				<div id="mySidenav" class="sidenav">
 					<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 					
