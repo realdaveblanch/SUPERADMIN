@@ -2,9 +2,9 @@
 
 echo "STATUS FAIL <br/>";
 sleep(1);
-echo "NO SE PUDO COPIAR, COMPRUEBA ERROR LOG, O QUE EL DIRECTORIO SE PUEDE ESCRIBIR";
+echo "NO SE PUDO REALIZAR, COMPRUEBA ERROR LOG, O QUE EL DIRECTORIO SE PUEDE ESCRIBIR";
 
-	echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"3;URL=clonado.php"'.">";		
+	echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"2;URL=clonado.php"'.">";		
 						
 						
 								$ua = $_SERVER['HTTP_USER_AGENT'];
@@ -13,5 +13,4 @@ echo "NO SE PUDO COPIAR, COMPRUEBA ERROR LOG, O QUE EL DIRECTORIO SE PUEDE ESCRI
 								
 								//CODE BY
 					//https://github.com/realdaveblanch
-						//https://github.com/X-aaron-X
 		?>

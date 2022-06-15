@@ -4,11 +4,15 @@ $dbfile = "cfg/conectados.db"; // ruta a la base de datos de conectados
 $expire = 1300; //tiempo para considerar a alguien online en segundos 21 MIN ;)
 //Si la base de datos no existe mostraba un, mensaje  
 if(!file_exists($dbfile)) {
-die("Error: BASE DE DATOS " . $dbfile . " NO ENCONTRADA");
+die("Error: BASE DE DATOS " . $dbfile . " NO ENCONTRADA O NO EXISTE");
 }
 //Si la base de datos no es de escritura mostraba un, mensaje 
 if(!is_writable($dbfile)) {
-die("Error: BASE DE DATOS" . $dbfile . " NO ES DE ESCRITURA, CHMOD 666.");
+die("Error: BASE DE DATOS" . $dbfile . " NO ES DE ESCRITURA.");
+}
+//Si la base de datos no es de lecturamostraba un, mensaje 
+if (!is_readable($dbfile)) {
+die("Error: BASE DE DATOS" . $dbfile . " NO ES DE LECTURA.");
 }
 //Esta función accede a la base de datos y cuenta las direcciones ip  
 function contaractivos() {
@@ -18,7 +22,6 @@ $cur_ip = getIP();
 //Junto con el tiempo en formato unix
 $cur_time = time();
 $dbary_new = array();
- 
 $dbary = unserialize(file_get_contents($dbfile));
 if(is_array($dbary)) {
 while(list($user_ip, $user_time) = each($dbary)) {
@@ -33,7 +36,6 @@ $fp = fopen($dbfile, "w");
 //Serializa los contenidos 
 fputs($fp, serialize($dbary_new)); //No se lleva acabo escritura por que no se añade la ip del admin
 fclose($fp);
- 
 $out = sprintf("%03d", count($dbary_new)); // formatear resultado a 3 números
 return $out;
 }

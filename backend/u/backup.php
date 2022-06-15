@@ -28,6 +28,9 @@ flush();
 sleep(0);
 //Se declaran donde están los valores de url actual
 $src = file_get_contents("cfg/urlpura.ini");
+if(!file_exists($src)) {
+die("Error: NO HAY SOURCE");
+}
 //Se declara donde esta el destino
 $dst = file_get_contents("cfg/urlclonar.ini");
 //Se declaran donde están los valores url 
@@ -72,6 +75,7 @@ function custom_copy($src, $dst) {
 	while( $file = readdir($dir) ) {
 		if (( $file != '.' ) && ( $file != '..' )) {
 			if ( is_dir($src . '/' . $file) )
+				
 			{
 				// Llamando funcion copiar de forma recursiva 
 				custom_copy($src . '/' . $file, $dst . '/' . $file);	
@@ -101,14 +105,13 @@ function rm_special_char($str) {
 $result = str_replace( array("..", "/"), '', $str);
 //El output después de transformar
 echo "-------------------------------<br/>";
-echo "Banner=:".$result;
+echo "Banner= " .$result;
 flush();
 //Se guarda en un fichero temporal
 $fp4 = fopen('cfg/hostnametemp.ini', 'a');
 file_put_contents('cfg/hostnametemp.ini','', LOCK_EX);
 fwrite($fp4, $result);
 }
-
 //Proceso de copiado del valor url nuevo para el clonado nuevo
 //Si la copia falla, fail
 echo "<br/>";
@@ -133,8 +136,6 @@ if (!copy($fp5, $newfilehost)) {
 //Tomo este valor para el nombre del .ini en el directorio cfg de activos
 $nombreini = file_get_contents('cfg/hostnametemp.ini', 'a');
 file_put_contents('cfg/clones/activos/' . $nombreini . ".ini" , $dst);
-file_put_contents('cfg/clones/panel/' . $nombreini . ".ini" , $dst);
-ob_end_clean();
 sleep(1);
 echo "<br/>";
 flush();
@@ -144,5 +145,6 @@ echo "Limpiando...";
 if (is_file("cfg/hostnametemp.ini")) {
 		unlink('cfg/hostnametemp.ini');
 	}
-echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"2;URL=ok.php"'.">";
+file_put_contents('cfg/urlclonar.ini','', LOCK_EX);
+echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=ok.php"'.">";
 ?>
