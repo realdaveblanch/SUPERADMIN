@@ -145,6 +145,6 @@ echo "Limpiando...";
 if (is_file("cfg/hostnametemp.ini")) {
 		unlink('cfg/hostnametemp.ini');
 	}
-file_put_contents('cfg/urlclonar.ini','', LOCK_EX);
+
 echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=ok.php"'.">";
 ?>

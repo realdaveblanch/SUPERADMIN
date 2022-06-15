@@ -191,7 +191,50 @@ error_reporting(0);
 								
 								
 				</form>		
-				
+
+				<form  class="form-box login" method="post" action="zip.php">
+					<?php					
+					//Se declara el directorio en el que se va a buscar .ini
+					$dir = 'cfg/clones/desactivados/';
+					//Se cuenta el directorio con variable global
+					$q   = (count(glob("$dir/*")) === 0) ? 'vacio' : 'hayalgo';
+						
+					if ($q=="vacio") {
+					//Si está vacío se muestra este mensaje	
+						echo "NO HAY APP DESACTIVADAS"; 
+					}
+					else{
+					//Se cuentan los ini que hay	
+						$filesdesss = glob('cfg/clones/desactivados/*.ini');
+					while(list($i, $filename) = each($filesdesss)){
+							$clones = file_get_contents($filesdesss);
+								$options = '';								
+					}
+					//Por cada .ini se muestra un select
+					foreach ($filesdesss as $filedess) {
+									$options .= '<option value="'.$filedess.'">'.$filedess.'</option>';
+								}
+								$select = '<select name="ZIP">'.$options.'</select>';
+								echo $select;
+					}
+											//CODE BY
+								//https://github.com/realdaveblanch
+								//https://github.com/X-aaron-X
+
+								?>
+								<div class="resultadosadmin" id="zip">
+								<button type="submit" style="color:white; background: #9aab1e; ">DESCARGAR COPIA</button>
+		
+							</div>
+							
+							
+								
+								
+								
+				</form>	
+
+
+
 				<form  class="form-box login" method="post" action="eliminar.php">
 					<?php					
 					//Se declara el directorio en el que se va a buscar .ini
