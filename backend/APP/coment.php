@@ -5,7 +5,7 @@
 
 	//CHECK QUE SE LE HA ASIGNADO UNA COOKIE EN INDEX.PHP
   if(isset($_COOKIE['cuestionario'])){
-		//echo ''; 
+		echo ''; 
 	}
 	else {
 		//SI NO TIENE UNA COOKIE ASIGNADA, LE MANDA A GRACIAS.PHP
@@ -60,6 +60,7 @@
                   //Escribimos la "$fecha" y la "$id" con un salto de linea
                   fwrite($crearFecha, $fecha. ", " .$id . "\r\n");
                 fclose($crearFecha);
+                //Leer contenido del json quitarle apartir de la id                 
 
                 $maxCaracteres = strlen($comentario);
 
@@ -70,8 +71,32 @@
                     //Entra en el if cuando los caracteres del comentario son menores que 3500 --> Para poner mas o menos caracteres
                     //tendriamos que modificar el 3501
                     if ($maxCaracteres < 3501) {
+                      //
+                      $ficheroJson = file_get_contents("res/$id/$id.json");
+                      $limpiandoJson = substr(preg_replace('/[\[" "]+/', '', $ficheroJson), 192, -1);
+                      $jsonLimpio = str_replace(',null', '', $limpiandoJson); 
+                      $arrayJson = explode(",", $jsonLimpio);
+
+                      $cont = 0;
+                      for ($i=1; $i < 16 ; $i++) {
+                        if (filesize("backend/u/cfg/conteJson/pregunta$i.conf") !== 0) {
+                          $lineas = file("backend/u/cfg/conteJson/pregunta$i.conf", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+                          foreach ($lineas as $numLinea => $linea) {
+                            $array = explode(",", $linea);      
+                            if ($arrayJson[$cont] == $array[0]) {
+                              $datos .= '"' . trim($array[1]) . '", ';
+                            }
+                          }
+                          $cont++;
+                        }
+                      }
+
+                      $datoslimpios = substr($datos, 0, -2);
+
                       //Escribimos el "$comentario" introducido por el usuario con un salto de linea
-                      fwrite($crearComentario, '"' . $comentario . '"' . "\r\n");
+                      fwrite($crearComentario, "Opciones Escogidas --> $datoslimpios" . "\r\n");
+                      fwrite($crearComentario, 'Comentario --> "' . $comentario . '"' . "\r\n");
                       fwrite($crearComentario, "-----------------------------------------------------------------------" ."\r\n");
                       
                       //Llamamos a la funcion "incrementClickCount" 

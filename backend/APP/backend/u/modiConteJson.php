@@ -47,6 +47,8 @@
 						file_put_contents("preguntas/pregunta$i.ini", '', LOCK_EX);
 						//Limpiamos el contenido de "pregunta?.json"
 						file_put_contents("../../assets/js/pregunta$i.json", '', LOCK_EX);
+
+						file_put_contents("cfg/conteJson/pregunta$i.conf", '', LOCK_EX);
 						clearstatcache();
 					}	
 				}
@@ -63,7 +65,7 @@
 					//Este es el valor del "div" de "html" en "index.html" para mostrar la pregunta sexo
 					//Están divididos para cargar entre medias el texto de la pregunta (variable $varsexo)
 					$primera = '<div class="form-group">';	
-					$ultima = '<select id="' . $opcion . '" class="form-control"></select></div>';
+					$ultima = '<select name="'. $opcion .'" id="' . $opcion . '" class="form-control"></select></div>';
 					$pregunta = file_get_contents("preguntas/$opcion.ini");
 
 					//Escribiendo el div que muestra la pregunta al hacer el cuestionario
@@ -90,6 +92,9 @@
 					file_put_contents("../../assets/js/$opcion.json", '"'."id".'"'.": ".'"'.$cont.'",' . "\r\n", FILE_APPEND);
 					file_put_contents("../../assets/js/$opcion.json", '"'."value".'"'.":".'"'.$cont.'",' . "\r\n", FILE_APPEND);
 					file_put_contents("../../assets/js/$opcion.json", '"'."nm".'"'.": ".'"'.$valor.'"' . "\r\n", FILE_APPEND);
+
+					file_put_contents("cfg/conteJson/$opcion.conf", $cont . ", " . $valor . "\r\n", FILE_APPEND);
+
 
 					//cuando "$cont" sea igual que "$cadenaNum" entrara en el if
 					if ($cont == $cadenaNum) {

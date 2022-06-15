@@ -69,5 +69,3 @@ file_put_contents("u/cfg/lastcuest2.ini",'' );
 file_put_contents("u/cfg/lastcuest2.ini", $mensaje2, FILE_APPEND);
 # Ya registramos la ip, ahora seguimos con el flujo normal ;)
 # Ahora lo imprimimos en pantalla
-
-
