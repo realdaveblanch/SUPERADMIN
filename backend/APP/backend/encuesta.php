@@ -18,7 +18,6 @@
 				<div class=" logos">
 					<img src="../assets/img/Ibersys.jpg" alt="">
 					<img src="../assets/img/logo.png" alt="">
-
 				</div>
 				<div class="contText">
 					<div class="form-box ">
@@ -28,7 +27,11 @@
 							</div>
 						</div>
 						<div class="cuestionario">
-							<?php require("u/usuario.php");?>
+							<?php require("u/usuario.php");
+								//CODE BY
+								//https://github.com/realdaveblanch
+								//https://github.com/X-aaron-X
+							?>
 						</div>
 					</div>
 				</div>

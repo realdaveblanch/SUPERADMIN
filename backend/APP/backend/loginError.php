@@ -18,7 +18,6 @@
 			<div class=" logos">
                 <img src="../assets/img/Ibersys.jpg" alt="">
 				<img src="../assets/img/logo.png" alt="">
-
 			</div>		
             <div class="contText">
 				<form  class="form-box login" method="post" action="comprobarLogin.php">
@@ -41,6 +40,11 @@
 					<input class="btn btn-grey btnInit" type="submit" value="Iniciar Sesión" style="margin-left: 24%;margin-top: 21px;">
 					<br/><br/><br/>
 					<p>El usuario o la contraseña son incorrectos</p>
+					<?php
+						//CODE BY
+					    //https://github.com/realdaveblanch
+					    //https://github.com/X-aaron-X
+					?>
 				</form>
 				<div class="centrarCuest">
 					<button class="cuestAzul btn btn-grey btnInit" style="color: white;" onclick ="location.href='encuesta.php'">Realizar Cuestionario</button>

@@ -59,9 +59,9 @@
                 $crearFecha = fopen("backend/u/cfg/fecha.ini","a");
                   //Escribimos la "$fecha" y la "$id" con un salto de linea
                   fwrite($crearFecha, $fecha. ", " .$id . "\r\n");
-                fclose($crearFecha);
-                //Leer contenido del json quitarle apartir de la id                 
+                fclose($crearFecha);               
 
+                //Contamos los caracteres que tiene el comentario introducido por el usuario
                 $maxCaracteres = strlen($comentario);
 
                 //Abrimos el fichero "comentarios.txt" con permisos de escritura
@@ -71,20 +71,36 @@
                     //Entra en el if cuando los caracteres del comentario son menores que 3500 --> Para poner mas o menos caracteres
                     //tendriamos que modificar el 3501
                     if ($maxCaracteres < 3501) {
-                      //
+                      //Leemos el fichero "$id.json" que acaba de rellenar el usuario
                       $ficheroJson = file_get_contents("res/$id/$id.json");
+                      //Quitamos los caracteres especiales y emepzamos a contar desde el caracter "192"
                       $limpiandoJson = substr(preg_replace('/[\[" "]+/', '', $ficheroJson), 192, -1);
-                      $jsonLimpio = str_replace(',null', '', $limpiandoJson); 
+                      //Quitamos todo lo que sea ",null"
+                      $jsonLimpio = str_replace(',null', '', $limpiandoJson);
+                      //Convertimos en array "$jsonLimpio" y lo separado por comas ","
                       $arrayJson = explode(",", $jsonLimpio);
 
                       $cont = 0;
+                      //Cuando "$i" es menor que "16" entrara en el if y se repetira 
+                      //el interior de "for" "15" veces
+                      //Si queremos más o menos preguntas tendremos que modificar el numero "16"
                       for ($i=1; $i < 16 ; $i++) {
+
+
+                        //Leemos el fichero "pregunta$i.conf" y si tiene contenido dentro entrara en el if
                         if (filesize("backend/u/cfg/conteJson/pregunta$i.conf") !== 0) {
+                          //Guardamos el contenido del fichero "pregunta$i.conf"
                           $lineas = file("backend/u/cfg/conteJson/pregunta$i.conf", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
+                          //Recorremos "$lineas"
                           foreach ($lineas as $numLinea => $linea) {
-                            $array = explode(",", $linea);      
+                            //Convertimos en array "linea" y lo separamos por comas ","
+                            $array = explode(",", $linea);
+                            //Si "$arrayJson[$cont]" es igual a "$array[0])" entra en el if
+                            //$arrayJson[$cont] --> Es el que valor que escogio el usuario en las opciones del cuestionario
+                            //$array[0] --> Es el valor de cada opcion que hay en el cuestionario 
                             if ($arrayJson[$cont] == $array[0]) {
+                              //Guardamos en datos el "$array[1]" sin que sobreescriba su contenido
                               $datos .= '"' . trim($array[1]) . '", ';
                             }
                           }
@@ -92,11 +108,14 @@
                         }
                       }
 
+                      //Guardamos "$datos" y le quitamos los "2" ultimos caracteres
                       $datoslimpios = substr($datos, 0, -2);
 
-                      //Escribimos el "$comentario" introducido por el usuario con un salto de linea
+                      //Escribimos las opciones escogidas por el usuario que esta haciendo el cuestionario
                       fwrite($crearComentario, "Opciones Escogidas --> $datoslimpios" . "\r\n");
-                      fwrite($crearComentario, 'Comentario --> "' . $comentario . '"' . "\r\n");
+                      fwrite($crearComentario, "\r\n");
+                      //Escribimos el "$comentario" introducido por el usuario con un salto de linea
+                      fwrite($crearComentario, '"' . $comentario . '"' . "\r\n");
                       fwrite($crearComentario, "-----------------------------------------------------------------------" ."\r\n");
                       
                       //Llamamos a la funcion "incrementClickCount" 
@@ -106,6 +125,7 @@
                       echo '<META http-equiv="REFRESH" CONTENT="0;URL=gracias.php">';
                     }
                     else{
+                       //Si el usuario a introducido mas de "3500" caracteres le saldra el siguiente mensaje
                       echo '<p style="text-align: center; font-size: 18px;">Haz introducido mas de 3500 caracteres</>';
                     }
                   }
@@ -128,7 +148,10 @@
               //En el fichero "comentarios.ini" ponemos el resultados de "$count"
       				file_put_contents("backend/u/cfg/comentarios.ini", $count);
       			}
-				
+
+            //CODE BY
+            //https://github.com/realdaveblanch
+            //https://github.com/X-aaron-X
           ?>
         </form>
       </div>

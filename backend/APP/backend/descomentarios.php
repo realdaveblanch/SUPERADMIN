@@ -9,7 +9,6 @@
 	}
 
 	$file = "u/cfg/comentarios.txt";
-
 	  
 	$txt = fopen($file, "r") or die("No puedo abrir el fichero o no hay comentarios!");
 	fclose($txt);
@@ -25,6 +24,9 @@
 	header("Content-Type: text/plain");
 	readfile($file);
 
+	//CODE BY
+	//https://github.com/realdaveblanch
+	//https://github.com/X-aaron-X
 
 	//Copia de respaldo comentarios
 	//$source = $file; 
@@ -34,5 +36,5 @@
 	//} 
 	//else { 
 	    //echo "----------Mensaje del sistema: Comentarios respaldados---------- \n"; 
-	//} 
+	//}
 ?>

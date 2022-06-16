@@ -23,7 +23,12 @@
 					<div class="form-box ">
 						<div class="welcome">
 							<div class="header">
-								<p class="title"><span>¡Gracias! La campaña de encuestas ha concluido. Muchas gracias por su participación.</span></p>			
+								<p class="title"><span>¡Gracias! La campaña de encuestas ha concluido. Muchas gracias por su participación.</span></p>
+								<?php
+									//CODE BY
+								    //https://github.com/realdaveblanch
+								    //https://github.com/X-aaron-X
+								?>			
 							</div>
 						</div>
 					</div>

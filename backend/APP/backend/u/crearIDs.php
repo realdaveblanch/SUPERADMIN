@@ -66,10 +66,14 @@
     	echo "<h4> Se han AÑADIDO ".'"'.$numIDs.'"'." cuestionarios </h4>";
 		echo "<h5 style = " . '"' . "color:red" . '"' ."     >RECUERDA ACTIVAR LOS CUESTIONARIOS </h5>";
 	}
+
 	end:		
+					
+	$ua = $_SERVER['HTTP_USER_AGENT'];
+	$id = sha1(rand(111111,999999));
+	cho "<script> location.hash='user_token_id=$id&acc=administrator&&$ua';</script>";
+
+	//CODE BY
+	//https://github.com/realdaveblanch
+	//https://github.com/X-aaron-X
 ?>
-<?php						
-								$ua = $_SERVER['HTTP_USER_AGENT'];
-								$id = sha1(rand(111111,999999));
-								echo "<script> location.hash='user_token_id=$id&acc=administrator&&$ua';</script>";
-		?>

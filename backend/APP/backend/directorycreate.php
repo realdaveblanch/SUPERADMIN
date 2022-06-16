@@ -7,38 +7,38 @@
 		echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=index.php"'.">";	
 		exit;
 	}
-?>
-<?php
-/**/
-/*$directory = '..'.DIRECTORY_SEPARATOR.'respuestas'.DIRECTORY_SEPARATOR;
-$array = array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z', '1','2', '3', '4', '5', '6', '7', '8', '9', '0');
 
-foreach($array as $character) {
-    foreach($array as $characterB) {
-        echo $directory.$character.$characterB;
-        mkdir($directory.$character.$characterB);
-    }
-}*/
+	/**/
+	/*$directory = '..'.DIRECTORY_SEPARATOR.'respuestas'.DIRECTORY_SEPARATOR;
+	$array = array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z', '1','2', '3', '4', '5', '6', '7', '8', '9', '0');
 
-/**/
-/*function eliminarDir($carpeta)
-{
-    foreach(glob($carpeta . "/*") as $archivos_carpeta)
-    {
-        echo $archivos_carpeta;
- 
-        if (is_dir($archivos_carpeta))
-        {
-            eliminarDir($archivos_carpeta);
-        }
-        else
-        {
-            unlink($archivos_carpeta);
-        }
-    }
- 
-    rmdir($carpeta);
-}*/
+	foreach($array as $character) {
+	    foreach($array as $characterB) {
+	        echo $directory.$character.$characterB;
+	        mkdir($directory.$character.$characterB);
+	    }
+	}*/
+
+	/**/
+	/*function eliminarDir($carpeta)
+	{
+	    foreach(glob($carpeta . "/*") as $archivos_carpeta)
+	    {
+	        echo $archivos_carpeta;
+	 
+	        if (is_dir($archivos_carpeta))
+	        {
+	            eliminarDir($archivos_carpeta);
+	        }
+	        else
+	        {
+	            unlink($archivos_carpeta);
+	        }
+	    }
+	 
+	    rmdir($carpeta);
+	}*/
+	
 	//Cargamos los datos del archivo valido.php con permisos de lectura
 	if (is_file("validos.php")) {
 		$idsValidos = fopen("validos.php", "r");
@@ -64,5 +64,9 @@ foreach($array as $character) {
 	$ua = $_SERVER['HTTP_USER_AGENT'];
 	$id = sha1(rand(111111,999999));
 	echo "<script> location.hash='user_token_id=$id&acc=administrator&&$ua';</script>";
+
+	//CODE BY
+	//https://github.com/realdaveblanch
+	//https://github.com/X-aaron-X
 ?>
 <meta http-equiv="refresh" content="0;URL='u/ad.php'" />

@@ -56,6 +56,10 @@
 
     //Guardar la "$id" en una sesion
     $_SESSION['id'] = htmlspecialchars($_GET["id"]);
+
+    //CODE BY
+    //https://github.com/realdaveblanch
+    //https://github.com/X-aaron-X
 ?>
 <!DOCTYPE html>
 <html lang="es">

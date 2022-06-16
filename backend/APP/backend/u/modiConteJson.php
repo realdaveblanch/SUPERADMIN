@@ -47,7 +47,7 @@
 						file_put_contents("preguntas/pregunta$i.ini", '', LOCK_EX);
 						//Limpiamos el contenido de "pregunta?.json"
 						file_put_contents("../../assets/js/pregunta$i.json", '', LOCK_EX);
-
+						//Limpiamos el contenido de "pregunta?.conf"
 						file_put_contents("cfg/conteJson/pregunta$i.conf", '', LOCK_EX);
 						clearstatcache();
 					}	

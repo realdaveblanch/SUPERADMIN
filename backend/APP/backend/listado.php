@@ -155,7 +155,11 @@
 									echo "<p/>";	
 								fclose($fh);
 								
-								include("online.php");	
+								include("online.php");
+
+								//CODE BY
+							    //https://github.com/realdaveblanch
+							    //https://github.com/X-aaron-X
 							?>
 							<span style="font-weight: bold;"> Realizandose ahora: </span>
 							<span style="color:#01a49e; font-weight: bold;"><?php echo $visitors_online;?></span>

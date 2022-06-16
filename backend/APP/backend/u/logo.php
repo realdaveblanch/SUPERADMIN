@@ -8,68 +8,74 @@
 		exit;
 	}
 
-//Código del uploader
+  //Código del uploader
   class config {
-	  //Tipo de fichero permitido
-  static $allowedFiles = ["png"];
-  //Directorio de subida
+    //Tipo de fichero permitido
+    static $allowedFiles = ["png"];
+    //Directorio de subida
     static $uploadDir = "../../assets/img/";
-	//Tamaño máximo
+    //Tamaño máximo
     static $maxFileSize = 20 * 1000000; // 20mb
   }
-//Declaración de la función
+
+  //Declaración de la función
   function uploadFile() {
-     $target_file = config::$uploadDir.basename($_FILES["file"]["name"]);
-     $extention = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-//Div de los mensajes de estado
-     if($_FILES["file"]["size"] > config::$maxFileSize) {
-         return [
-           "success" => false,
-           "reason" => "Logo demasiado grande."
-         ];
-     }
+    $target_file = config::$uploadDir.basename($_FILES["file"]["name"]);
+    $extention = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-     if(in_array($extention, config::$allowedFiles) == false) {
-         return [
-           "success" => false,
-           "reason" => "Extensión no permitida."
-         ];
-     }
+    //Div de los mensajes de estado
+    if($_FILES["file"]["size"] > config::$maxFileSize) {
+      return [
+        "success" => false,
+        "reason" => "Logo demasiado grande."
+      ];
+    }
 
-     if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-         return [
-           "success" => true,
-           "reason" => "Logo subido satisfactoriamente."
-         ];
-     } else {
-       echo $_FILES["file"]["tmp_name"]."END<br>";
-       echo $target_file;
-         return [
-           "success" => false,
-           "reason" => "ERROR inesperado."
-         ];
-     }
+    if(in_array($extention, config::$allowedFiles) == false) {
+      return [
+        "success" => false,
+        "reason" => "Extensión no permitida."
+      ];
+    }
+
+    if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+      return [
+        "success" => true,
+        "reason" => "Logo subido satisfactoriamente."
+      ];
+    }
+    else {
+      echo $_FILES["file"]["tmp_name"]."END<br>";
+      echo $target_file;
+      return [
+        "success" => false,
+        "reason" => "ERROR inesperado."
+      ];
+    }
   }
 
   $status = "";
-//Div de los mensajes de estado
-   if(isset($_FILES["file"])) {
-     $success = uploadFile();
-     if($success["success"] == true) {
-       $status = '<div class="notification-text" role="alert">'.htmlspecialchars($success["reason"]).'</div>';
-     } else {
-       $status = '<div class="notification-text" role="alert">'.htmlspecialchars($success["reason"]).'</div>';
-     }
-   }
 
-   $fileTypes = "";
-//Div y estilo de los tipos de formato 
-   foreach (config::$allowedFiles as $key => $value) {
-     $fileTypes .= '<span class="badge badge-primary">.'.htmlentities($value)."</span> ";
-   }
-   					//CODE BY
+  //Div de los mensajes de estado
+  if(isset($_FILES["file"])) {
+    $success = uploadFile();
+    if($success["success"] == true) {
+      $status = '<div class="notification-text" role="alert">'.htmlspecialchars($success["reason"]).'</div>';
+    } 
+    else {
+      $status = '<div class="notification-text" role="alert">'.htmlspecialchars($success["reason"]).'</div>';
+    }
+  }
+
+  $fileTypes = "";
+  //Div y estilo de los tipos de formato 
+  foreach (config::$allowedFiles as $key => $value) {
+    $fileTypes .= '<span class="badge badge-primary">.'.htmlentities($value)."</span> ";
+  }
+
+  //CODE BY
 	//https://github.com/realdaveblanch
-		//https://github.com/X-aaron-X
+	//https://github.com/X-aaron-X
 ?>
 <!DOCTYPE html>
   <html lang="es">
@@ -93,13 +99,9 @@
 		  <link rel="stylesheet" href="../../assets/css/banner.css">
 		  <link rel="stylesheet" href="../../assets/css/bannerset.css">
 		  <?php
-
-				
-								$ua = $_SERVER['HTTP_USER_AGENT'];
-
-
-								$id = sha1(rand(111111,999999));
-								echo "<script> location.hash='user_token_id=$id&acc=administrator&&$ua';</script>";
+			 $ua = $_SERVER['HTTP_USER_AGENT'];
+			 $id = sha1(rand(111111,999999));
+				echo "<script> location.hash='user_token_id=$id&acc=administrator&&$ua';</script>";
 			?>	
 		  <! -- FIN del banner del admin -->
 		  <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -110,7 +112,6 @@
   		  <div class=" logos">   
     		  <img src="../../assets/img/Ibersys.jpg" alt="">
     		  <img src="../../assets/img/logo.png" alt="">
- 
         </div>				
 		  <div id="mySidenav" class="sidenav">
 				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -127,8 +128,7 @@
 								<div class="rectangle">
 									<div class="notification-text">
 										<i class="material-icons">info</i>
-										<span>&nbsp;&nbsp;Panel de <?php echo file_get_contents('cfg/hostname.ini'); ?>
-										
+										<span>&nbsp;&nbsp;Panel de <?php echo file_get_contents('cfg/hostname.ini'); ?>			
 					</span>
 									</div>
 								</div>

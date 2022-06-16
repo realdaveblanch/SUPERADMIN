@@ -40,12 +40,15 @@
 							}
 						}
 					</script>				
-		
 					<input class="btn btn-grey btnInit" type="submit" value="Iniciar Sesión" style="margin-left: 24%;margin-top: 21px;">	
 					<input class="btn btn-grey btnInit" type="hidden" name="submitted" value="Iniciar Sesión">
 				</form>
 				<div class="centrarCuest">
-					
+					<?php
+						//CODE BY
+					    //https://github.com/realdaveblanch
+					    //https://github.com/X-aaron-X
+					?>
 					<button class="cuestAzul btn btn-grey btnInit" style="color: white;" onclick ="location.href='encuesta.php'">Realizar Cuestionario</button><br/><br/>
 				<div>
 			</div>

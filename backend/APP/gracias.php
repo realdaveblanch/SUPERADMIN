@@ -1,21 +1,26 @@
 <?php 
-session_start(); 
-//Se abre la variable global sessionstart
-if ( isset( $_SESSION['cuestionario'] ) ) {
-	unset( $_SESSION['cuestionario'] );
-}
-//Se carga cualquier sesión o cookie con el valor cuestionario
-if (isset($_SERVER['HTTP_COOKIE'])) {
-    $cookies = explode(';', $_SERVER['HTTP_COOKIE']);
-    foreach($cookies as $cookie) {
-        $parts = explode('=', $cookie);
-        $name = trim($parts[0]);
-        setcookie($name, '', time()-10000);
-        setcookie($name, '', time()-10000, '/');
+    session_start(); 
+    //Se abre la variable global sessionstart
+    if ( isset( $_SESSION['cuestionario'] ) ) {
+    	unset( $_SESSION['cuestionario'] );
     }
-}
-unset($_COOKIE['cuestionario']);  
-session_destroy(); 
+    //Se carga cualquier sesión o cookie con el valor cuestionario
+    if (isset($_SERVER['HTTP_COOKIE'])) {
+        $cookies = explode(';', $_SERVER['HTTP_COOKIE']);
+        foreach($cookies as $cookie) {
+            $parts = explode('=', $cookie);
+            $name = trim($parts[0]);
+            setcookie($name, '', time()-10000);
+            setcookie($name, '', time()-10000, '/');
+        }
+    }
+
+    unset($_COOKIE['cuestionario']);  
+    session_destroy();
+
+    //CODE BY
+    //https://github.com/realdaveblanch
+    //https://github.com/X-aaron-X
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -39,7 +44,6 @@ session_destroy();
     			</div>
             </div>
         </div>
-
         <div class="contText">
             <div class="form-box ">
                 <div class="desp">

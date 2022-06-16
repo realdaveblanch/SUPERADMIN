@@ -83,7 +83,7 @@
 									file_put_contents("cfg/ssap/ssapetnecli.ini", '', LOCK_EX);
 									//En el fichero "ssapetnecli.ini" guardamos la contraseña para el cliente
 									file_put_contents("cfg/ssap/ssapetnecli.ini", $ssapCli, LOCK_EX);
-									echo "<h5> Se ha cambiado la contraseña </h5>";
+									echo "<h5> Se ha cambiado la contraseña, va en texo plano. </h5>";
 								}
 							?>	
 						</form>
@@ -96,14 +96,22 @@
 							<?php
 								//Si pulsamos el boton "cambiar" de administrador entrara en eel if
 								if(isset($_POST['ad'])){
-									//Guardamos el contenido de "passAdmin"
-									$ssapAd = $_POST['passAdmin'];
-
-									//El fichero "ssapnimda.ini" lo ponemos en blanco
+									$ssapAd = $_POST['passAdmin'];																											
+										/* Contraseña. */
+									$password = $ssapAd;
+									/* Parametro de coste de generacion a 12. */
+									$options = ['cost' => 12];
+									/* Creando hash. */
+									$hash = password_hash($password, PASSWORD_DEFAULT, $options);
+									//Se vacía el contenido de la contraseña
 									file_put_contents("cfg/ssap/ssapnimda.ini", '', LOCK_EX);
-									//En el fichero "ssapnimda.ini" guardamos la contraseña para el administrador
-									file_put_contents("cfg/ssap/ssapnimda.ini", $ssapAd, LOCK_EX);
-									echo "<h5> Se ha cambiado la contraseña </h5>";
+									//Se carga en el archivo la contaseña elegida
+									file_put_contents("cfg/ssap/ssapnimda.ini", $hash, LOCK_EX);
+									echo "<h5> Se ha cambiado la contraseña, está hasheada </h5>";
+
+									//CODE BY
+								    //https://github.com/realdaveblanch
+								    //https://github.com/X-aaron-X
 								}
 							?>	
 						</form>		

@@ -8,17 +8,20 @@
 		exit;
 	}
 
-$file = "u/cfg/comentarios.txt";
-$txt = fopen($file, "r") or die("No puedo abrir el fichero o no hay comentarios!");
-fclose($txt);
+	$file = "u/cfg/comentarios.txt";
+	$txt = fopen($file, "r") or die("No puedo abrir el fichero o no hay comentarios!");
+	fclose($txt);
 
-header('Content-Description: File Transfer');
-header('Content-Disposition: attachment; filename=comentarios.txt');
-header('Expires: 0');
-header('Cache-Control: must-revalidate');
-header('Pragma: public');
-header('Content-Length: ' . filesize($file));
-header("Content-Type: text/plain");
-readfile($file);
+	header('Content-Description: File Transfer');
+	header('Content-Disposition: attachment; filename=comentarios.txt');
+	header('Expires: 0');
+	header('Cache-Control: must-revalidate');
+	header('Pragma: public');
+	header('Content-Length: ' . filesize($file));
+	header("Content-Type: text/plain");
+	readfile($file);
 
+	//CODE BY
+	//https://github.com/realdaveblanch
+	//https://github.com/X-aaron-X
 ?>
