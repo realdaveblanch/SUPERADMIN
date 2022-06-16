@@ -26,4 +26,6 @@
       header ("location: loginError.php");
     }
   }
+ 								//CODE BY
+					//https://github.com/realdaveblanch
 ?>

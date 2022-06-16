@@ -37,6 +37,7 @@ $destinofinal = 'cfg/clones/activos';
 mover_ini($clon, $destinofinal);
 }
 echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=opciones.php"'.">";
-
+								//CODE BY
+					//https://github.com/realdaveblanch
 
 ?>

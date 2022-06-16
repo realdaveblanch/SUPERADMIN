@@ -77,7 +77,8 @@ error_reporting(0);
 								$select = '<select name="clones">'.$options.'</select>';
 								echo $select;
 					}
-								
+								//CODE BY
+					//https://github.com/realdaveblanch								
 								
 								
 								?>
@@ -114,7 +115,7 @@ error_reporting(0);
 					}
 											//CODE BY
 								//https://github.com/realdaveblanch
-								//https://github.com/X-aaron-X
+
 
 								?>
 							
@@ -184,7 +185,7 @@ error_reporting(0);
 					}
 											//CODE BY
 								//https://github.com/realdaveblanch
-								//https://github.com/X-aaron-X
+							
 
 								?>
 								<button type="submit" name="seleccionar" style="color:white; background: #9aab1e; ">Reactivar</button>
@@ -219,7 +220,7 @@ error_reporting(0);
 					}
 											//CODE BY
 								//https://github.com/realdaveblanch
-								//https://github.com/X-aaron-X
+				
 
 								?>
 								<div class="resultadosadmin" id="zip">

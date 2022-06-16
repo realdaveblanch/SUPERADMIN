@@ -98,6 +98,8 @@
 									file_put_contents("cfg/ssap/ssapnimda.ini", $ssapAd, LOCK_EX);
 									echo "<h5> Se ha cambiado la contraseña </h5>";
 								}
+								//CODE BY
+					//https://github.com/realdaveblanch
 							?>	
 						</form>		
 					</div>

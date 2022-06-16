@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 //Se elimina la ruta que contenga $clon ($interno)
 	
 
-	//La funcion borrara la carpeta res y todo su contenido
+	//La funcion borrara la carpeta que se le indique y todo su contenido
 	function removeFiles($target) {
 	    if(is_dir($target)){
 	        $files = glob( $target . '*', GLOB_MARK );
@@ -35,7 +35,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 	        unlink( $target );  
 	    }
 	}
+//Se elimina lo que diga la ruta contemplada en el .ini + _old para que borre el desactivado
 removeFiles($interno . "_old");
+//Se elimina el .ini
 unlink($interno);
 unlink($clon);
 
@@ -44,4 +46,6 @@ unlink($clon);
 //Hay que buscar line en select y eliminar
 echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=opciones.php"'.">";
 }
+								//CODE BY
+					//https://github.com/realdaveblanch
 ?>

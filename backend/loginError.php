@@ -12,10 +12,12 @@
         <link rel="icon"  href="../assets/img/favi.png">
     </head>
     <body>
-        <!-- Top content -->
+       <!-- Top content -->
         <div class="divText">
-        <div class="blanco top-content">
-			<div class=" logos">
+	        <div class="blanco top-content">
+				<div class=" logos">
+					<img src="../assets/img/logo.png" alt="">
+				</div>
 
 
 			</div>		

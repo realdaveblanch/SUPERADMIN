@@ -147,4 +147,7 @@ if (is_file("cfg/hostnametemp.ini")) {
 	}
 
 echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=ok.php"'.">";
+
+								//CODE BY
+					//https://github.com/realdaveblanch
 ?>

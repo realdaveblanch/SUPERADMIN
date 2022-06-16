@@ -26,7 +26,6 @@ echo "<script> location.hash='user_token_id=$id&acc=SUPERadministrator&&$ua';</s
 	echo "<META http-equiv=".'"REFRESH"'." CONTENT=".'"0;URL=opciones.php"'.">";
 	
 											//CODE BY
-								//https://github.com/realdaveblanch
-								//https://github.com/X-aaron-X
+								//https://github.com/realdaveblanch				
 
 ?>

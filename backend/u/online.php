@@ -48,4 +48,6 @@ return $ip;
 }
 //Se activa la función de contar activos dando soporte a  la db
 $visitors_online = contaractivos();
+								//CODE BY
+					//https://github.com/realdaveblanch
 ?>
