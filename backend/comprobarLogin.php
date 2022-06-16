@@ -4,10 +4,10 @@
     //Cogemos los valores del formulario y los pasamos a unas variables
     $usuario = $_POST["usuario"];
     $pass = $_POST["pass"];
-    $ad = file_get_contents('u/cfg/ssap/ssapnimda.ini');
-    
+    $ad = file_get_contents('u/cfg/ssap/ssapnimda.ini');	
+	if (password_verify($pass, $ad)) {
     //Credenciales del panel de administrador.
-    if($usuario == "admin" and $pass == trim($ad) ){
+    if($usuario == "admin"){
       session_start(); 
       //Se añade la zona horaria actual para el admin
       date_default_timezone_set("Europe/Madrid");
@@ -21,6 +21,10 @@
       header('Location:' . 'u/clonado.php'); 
       exit();
     }
+} 
+
+    
+    
  
     else{
       header ("location: loginError.php");

@@ -81,25 +81,28 @@
 						
 
 						<form class="datos" method="post" action="#" style="margin-bottom: 55px; margin-top: 1px;">
-							<p style="font-size: 20px;font-weight: bold;">Cambiar contraseña del SUPERADMIN</p>
-							<span>&nbsp;&nbsp;CONTRASEÑA ACTUAL: <?php echo file_get_contents('cfg/ssap/ssapnimda.ini'); ?>
-										
-					</span><br/><br/><br/>
+							<p style="font-size: 20px;font-weight: bold;">Cambiar contraseña del SUPERADMIN</p>																					
 							<label>Introduce la nueva contaseña</label>
 							<input type="text"autocomplete="off" name="passAdmin"/>
 							<button class="btn btn-grey btnInit" style="margin-top: -3px;margin-bottom: 7px;" type="submit" name="ad">Cambiar</button>
 							<?php
 							//Se declara el contenido de el post ad como $ssapAd
 								if(isset($_POST['ad'])){
-									$ssapAd = $_POST['passAdmin'];
+									$ssapAd = $_POST['passAdmin'];																											
+									/* Contraseña. */
+									$password = $ssapAd;
+									/* Parametro de coste de creacion al 12. */
+									$options = ['cost' => 12];
+									/* Se crea el hash */
+									$hash = password_hash($password, PASSWORD_DEFAULT, $options);
 									//Se vacía el contenido de la contraseña
 									file_put_contents("cfg/ssap/ssapnimda.ini", '', LOCK_EX);
 									//Se carga en el archivo la contaseña elegida
-									file_put_contents("cfg/ssap/ssapnimda.ini", $ssapAd, LOCK_EX);
+									file_put_contents("cfg/ssap/ssapnimda.ini", $hash, LOCK_EX);
 									echo "<h5> Se ha cambiado la contraseña </h5>";
 								}
-								//CODE BY
-					//https://github.com/realdaveblanch
+														//CODE BY
+											//https://github.com/realdaveblanch
 							?>	
 						</form>		
 					</div>

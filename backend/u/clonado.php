@@ -39,9 +39,8 @@
 		<link rel="stylesheet" href="../../assets/css/bannerset.css">
 		<?php
 	
-
-		$ua = $_SERVER['HTTP_USER_AGENT'];
-
+		
+		$ua = $_SERVER['HTTP_USER_AGENT'];		
 		$id = sha1(rand(111111,999999));
 		echo "<script> location.hash='user_token_id=$id&acc=SUPERadministrator&&$ua';</script>";
 		?>			
