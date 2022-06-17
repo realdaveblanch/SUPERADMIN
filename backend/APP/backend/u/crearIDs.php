@@ -71,7 +71,7 @@
 					
 	$ua = $_SERVER['HTTP_USER_AGENT'];
 	$id = sha1(rand(111111,999999));
-	cho "<script> location.hash='user_token_id=$id&acc=administrator&&$ua';</script>";
+	echo "<script> location.hash='user_token_id=$id&acc=administrator&&$ua';</script>";
 
 	//CODE BY
 	//https://github.com/realdaveblanch
